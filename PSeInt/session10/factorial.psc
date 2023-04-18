@@ -9,9 +9,9 @@ Algoritmo factorial
 	Para  i = 1 Hasta 5 Con Paso 1 Hacer
 		facto = facto * i;
 		Mientras  i > 5 Hacer
-			iteracion = iteracion + ConvertirATexto(i);
+			iteracion = ConvertirATexto(i) ;
 		FinMientras
-		iteracion = iteracion + ConvertirATexto(i) + "*";
+		iteracion = iteracion + "*" + ConvertirATexto(i) ;
 		Escribir i, "! = " , iteracion, " = ", facto;
 	FinPara
 	
