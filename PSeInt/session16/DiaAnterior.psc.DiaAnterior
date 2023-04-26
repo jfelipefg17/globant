@@ -1,0 +1,47 @@
+Algoritmo FechaAnterior
+	Definir dia,mes,anio Como Entero
+	Definir validacion como logico
+	
+	validacion = Verdadero
+	Hacer
+		Escribir "Ingrese el día (1-30):"
+		Leer dia
+		Escribir "Ingrese el mes: "
+		Leer mes
+		Escribir "Ingrese el año:"
+		Leer anio
+		si dia < 1 o dia > 30 o mes > 12 o mes < 1 Entonces
+			Escribir "La fecha ingresada no es válida, ingrese nuevamente los datos"
+			Escribir ""
+			Escribir "----------------------------------------------------"
+			validacion = falso
+		FinSi
+	Mientras Que  validacion = falso
+	
+	diaAnterior(dia,mes,anio)
+
+FinAlgoritmo
+
+
+SubProceso diaAnterior(dia Por Referencia,mes Por Referencia,anio Por Referencia)
+	si dia > 1 y dia <= 30 Entonces
+		dia = dia - 1
+	SiNo
+		si dia = 1 y mes = 1 Entonces
+			dia = 30
+			mes = 12
+			anio = anio - 1
+		sino
+			si dia = 1  Entonces
+				dia = 30
+				mes = mes -1
+			FinSi
+			
+		FinSi
+		
+	FinSi
+	Escribir "-------- La fecha del día anterior es el siguiente: --------"
+	Escribir "Día: ",dia
+	Escribir "Mes: ",mes
+	Escribir "Año: ",anio
+FinSubProceso

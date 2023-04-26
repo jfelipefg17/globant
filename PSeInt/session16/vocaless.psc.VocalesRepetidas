@@ -1,0 +1,64 @@
+//Diseñar un procedimiento que reciba una frase, y el programa remueva todas las vocales
+//repetidas. Al final el procedimiento mostrará la frase final.
+//Por ejemplo:
+//Entrada: “Habia una vez un barco”
+//Salida: “Habi un vez n brco"
+//	Se marcan en rojo las repetidas sólo para explicar la consigna. Las vocales ‘e’, ‘i’ y ‘o’ quedan
+//		al no estar repetidas.
+
+Algoritmo RepeticionVocales
+	Definir frase Como Caracter
+	Escribir "Ingrese la frase"
+	Leer frase
+	vocalesRepetidas(frase)
+FinAlgoritmo
+
+
+SubProceso vocalesRepetidas(frase)
+	Definir letra Como Caracter
+	Definir i,ca,ce,ci,co,cu Como Entero
+	ca = 0
+	ce = 0
+	ci = 0
+	co = 0
+	cu = 0
+	Para i= 0 Hasta Longitud(frase)-1 Con Paso 1 Hacer
+		letra = Subcadena(frase,i,i)
+		
+		si letra = "a" Entonces
+			ca = ca + 1
+			si ca>1 Entonces
+				letra =""
+			FinSi
+		FinSi
+		si letra = "e" Entonces
+			ce = ce + 1
+			si ce>1 Entonces
+				letra =""
+			FinSi
+		FinSi
+		
+		si letra = "i" Entonces
+			ci = ci + 1
+			si ci>1 Entonces
+				letra =""
+			FinSi
+		FinSi
+		
+		si letra = "o" Entonces
+			co = co + 1
+			si co>1 Entonces
+				letra =""
+			FinSi
+		FinSi
+		
+		si letra = "u" Entonces
+			cu = cu + 1
+			si cu>1 Entonces
+				letra =""
+			FinSi
+		FinSi
+		
+		Escribir sin saltar letra
+	Fin Para
+FinSubProceso
