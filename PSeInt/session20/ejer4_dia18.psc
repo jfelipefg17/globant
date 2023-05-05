@@ -29,7 +29,8 @@ Algoritmo menu
 					a= Verdadero
 					si n == 0 Entonces
 						escribir "ingrese el tamaño del vector"
-						leer n
+						leer n 
+						n = n-1
 					FinSi
 					
 					VectorA(n,arr1)
