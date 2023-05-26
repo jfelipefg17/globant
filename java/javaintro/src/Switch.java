@@ -8,7 +8,7 @@ public class Switch {
         motor = mt.nextLine();
 
         switch (motor) {
-            case "felipe":
+            case "felipe" :
                 System.out.println("La bomba es una bomba de agua");
                 break;
             case "andres":
