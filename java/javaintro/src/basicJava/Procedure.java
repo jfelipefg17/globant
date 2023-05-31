@@ -1,3 +1,4 @@
+package basicJava;
 import java.util.Scanner;
 public class Procedure {
     public static void main(String[] args) {

@@ -1,5 +1,10 @@
+package basicJava;
+
 import java.util.Scanner;
+
+
 public class BooleanDoubleChar {
+
     public static void main(String[] args) {
 
         Scanner leer = new Scanner(System.in);
