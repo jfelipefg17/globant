@@ -26,12 +26,18 @@ public class WordSoup {
 
             int lon = word.length();
             int fil = random.nextInt(9);
+            int colm = random.nextInt(9);
 
+            while(colm + lon > 9) {
+                colm = random.nextInt(9);
+            }
 
             for (int j = 0 ; j <= lon - 1 ; j++) {
-                matrix[fil][j] = word.substring(j,j + 1);
-
+                matrix[fil][colm] = word.substring(j, j + 1);
+                colm = colm + 1;
             }
+
+
         }
         mm(matrix);
     }
