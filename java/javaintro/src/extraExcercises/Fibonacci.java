@@ -1,4 +1,6 @@
-package extraExcercises;
+package basicJava.extraExcercises;
+
+import java.util.Scanner;
 
 /**Perform a program that completes a vector with the first N numbers of the
  * Fibonacci sequence. Remember that the Fibonacci succession is the
@@ -29,4 +31,25 @@ package extraExcercises;
 
  * */
 public class Fibonacci {
+    public static void main(String[] args) {
+        Scanner num = new Scanner(System.in);
+
+        System.out.println("write a number");
+        int n = num.nextInt();
+
+        System.out.println(n + "! = " + fibo(n) );
+        System.out.println("");
+        System.out.print(n + "! = ");
+
+        for ( int i = 0; i < n; i++ ){
+            System.out.print(fibo(i) + " + ");
+        }
+    }
+
+    public static int fibo(int num){
+        if(num <= 1 ) {
+            return num;
+        }else
+            return (fibo(num - 1) + fibo(num - 2));
+    }
 }

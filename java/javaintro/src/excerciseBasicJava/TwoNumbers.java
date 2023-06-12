@@ -1,6 +1,4 @@
-package excerciseBasicJava;
-
-import com.sun.deploy.uitoolkit.impl.fx.AppletStageManager;
+package basicJava.excerciseBasicJava;
 
 import java.util.Scanner;
 

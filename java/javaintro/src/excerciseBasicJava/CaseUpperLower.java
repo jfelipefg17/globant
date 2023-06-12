@@ -1,4 +1,4 @@
-package excerciseBasicJava;
+package basicJava.excerciseBasicJava;
 import java.util.Scanner;
 
 /**
