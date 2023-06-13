@@ -1,10 +1,11 @@
 package petsapp.entities;
 
-public class Dogs {
+public class Pet {
     public String name;
     public String nickName;
-    public String race;
     public String type;
+    public String color;
+    public String race;
     public int age;
-
+    public boolean tail;
 }
