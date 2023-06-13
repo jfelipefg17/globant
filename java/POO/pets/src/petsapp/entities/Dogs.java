@@ -1,4 +1,4 @@
-package poo.entities;
+package petsapp.entities;
 
 public class Dogs {
     public String name;
