@@ -87,7 +87,7 @@ public class Pet {
     public boolean isTail() {
         return tail;
     }
-    
+
     public String toString() {
         return "Pet{" +
                 "name='" + name + '\'' +
