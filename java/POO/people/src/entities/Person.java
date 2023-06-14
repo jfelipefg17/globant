@@ -1,7 +1,7 @@
 package entities;
 public class Person {
 
-    public String name;
+    private String name;
     private String lastName;
     private int age;
 
@@ -42,12 +42,4 @@ public class Person {
         this.age = age;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                '}';
-    }
 }

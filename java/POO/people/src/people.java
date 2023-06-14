@@ -1,6 +1,6 @@
 import entities.Person;
+import services.ServicePerson;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class People {
@@ -24,8 +24,12 @@ public class People {
 
         p3.setLastName(read.next());
 
-        System.out.println(p2.name);
+
         System.out.println(p3.getLastName());
         System.out.println(p3.getAge());
+
+        ServicePerson p = new ServicePerson();
+        p.createPerson();
+
     }
 }

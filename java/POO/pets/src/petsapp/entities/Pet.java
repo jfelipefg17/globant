@@ -88,15 +88,5 @@ public class Pet {
         return tail;
     }
 
-    public String toString() {
-        return "Pet{" +
-                "name='" + name + '\'' +
-                ", nickName='" + nickName + '\'' +
-                ", type='" + type + '\'' +
-                ", color='" + color + '\'' +
-                ", race='" + race + '\'' +
-                ", age=" + age +
-                ", tail=" + tail +
-                '}';
-    }
+
 }

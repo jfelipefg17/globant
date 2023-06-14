@@ -1,18 +1,18 @@
 package petsapp;
 
 import petsapp.entities.Pet;
+import petsapp.servicies.ServicePet;
+
 import java.util.Scanner;
 
 public class PetsAPP {
 
     public static void main(String[] args) {
-        Scanner read = new Scanner(System.in);
 
-        Pet p1 = new Pet("cooper", read.next(), "Dog");
+        ServicePet p = new ServicePet();
 
-        p1.setName("mini Copper");
+        Pet p1 = p.creatPet();
 
         System.out.println(p1);
-//        System.out.println(p1.name + " " + p1.nickName + " " + p1.type + " ");
     }
 }
