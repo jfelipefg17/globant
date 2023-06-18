@@ -5,10 +5,6 @@ import java.util.Scanner;
 
 public class People {
 
-    @Override
-    public String toString() {
-        return "People{}";
-    }
 
     public static void main(String[] args) {
         Scanner read = new Scanner(System.in);

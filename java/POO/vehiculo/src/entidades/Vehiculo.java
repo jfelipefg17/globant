@@ -22,7 +22,7 @@ public class Vehiculo {
     public void setMarca(String marca) {
         this.marca = marca;
     }
-    
+
     public String getModelo() {
         return modelo;
     }

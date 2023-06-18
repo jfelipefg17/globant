@@ -14,9 +14,9 @@ public class Pet {
     }
 
     public Pet (String name, String nickName, String type){
-        this.name = name;
-        this.nickName = nickName;
-        this.type = type;
+            this.name = name;
+            this.nickName = nickName;
+            this.type = type;
     }
 
     public Pet(String name, String nickName, String type, String color, String race, int age, boolean tail) {
