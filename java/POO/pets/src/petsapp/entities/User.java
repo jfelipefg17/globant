@@ -1,19 +1,34 @@
 package petsapp.entities;
-import java.util.Date;
+
+
 public class User {
-    public String name;
-    public String surName;
-    public int dni;
-    public Date birthday;
-    public String country;
+    private String name;
+    private int ID;
+
+
     public User() {
     }
 
-    public User(String name, String surName, int dni, Date birthday, String country) {
+    public User(String name, int ID) {
+
         this.name = name;
-        this.surName = surName;
-        this.dni = dni;
-        this.birthday = birthday;
-        this.country = country;
+        this.ID = ID;
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 }
