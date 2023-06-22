@@ -11,7 +11,7 @@ public class SoccerAPP {
 
         Player p1 = pl.createPlayer();
 
-        System.out.println(p1);
+        System.out.println(p1f);
 
     }
 }
