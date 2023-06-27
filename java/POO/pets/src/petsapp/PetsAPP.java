@@ -5,10 +5,13 @@ import petsapp.services.ServicePet;
 import petsapp.services.ServiceUser;
 
 /**
- * no termino de entender bien como funciona PetsAPP ni como estoy llmando a las cosas seteando y eso no se que hago en las lineas 17 y 18
- * no se como hacer para agregar el nombre del dueno del perro al constructor orginal del perro que en un inicio sale sin dueno
+ * no termino de entender bien como funciona PetsAPP ni como
+ * estoy llmando a las cosas seteando y eso no se que hago en las lineas 17 y 18
+ * no se como hacer para agregar el nombre del dueno del perro al constructor orginal
+ * del perro que en un inicio sale sin dueno
  * no se si lo estoy haciendo bien
- * estoy enredado con el tema de objetos intanciar constructor llamar desde otros archivos , settter gettter etec.
+ * estoy enredado con el tema de objetos intanciar constructor llamar desde otros
+ * archivos , settter gettter etec.
  *
  * */
 
