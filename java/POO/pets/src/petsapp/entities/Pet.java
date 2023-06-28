@@ -1,7 +1,7 @@
 package petsapp.entities;
 
 public class Pet {
-    // all of this are objets
+    // attributes of the object
     private String name;
     private String nickName;
     private String type;
@@ -12,7 +12,9 @@ public class Pet {
     private String ownerName;
     private boolean owner;
 
-    //default constructor
+
+    //implicit constructor
+    //empty constructor
     public Pet(){
 
     }
@@ -24,7 +26,7 @@ public class Pet {
     }
     // constructor with parameters
     public Pet(String name, String nickName, String type, String color, String race, int age, boolean tail) {
-        // this. is for the name class , and name alone is for the parameter of the constructor
+        //this.name reference to this class to the attribute name of this class | name make reference to the argument that is in the constructor
         this.name = name;
         this.nickName = nickName;
         this.type = type;

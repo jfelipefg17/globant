@@ -12,10 +12,10 @@ public class ServicePet {
 
     public Pet creatPet () {
 
-        System.out.println("write a name");
+        System.out.println("write a name of the pet");
         String name = read.nextLine();
 
-        System.out.println("write a nickname");
+        System.out.println("write a nickname of the pet");
         String nickName = read.nextLine();
 
         System.out.println("write a type of pet");
@@ -24,13 +24,13 @@ public class ServicePet {
         System.out.println("write a color of the pet");
         String color = read.nextLine();
 
-        System.out.println("write the race");
+        System.out.println("write the race of the pet");
         String race = read.nextLine();
 
         System.out.println("write how many year have your pet" );
         int age = num.nextInt();
 
-        System.out.println("your pet have a tail");
+        System.out.println("your pet have a tail ?");
         boolean tail = bo.nextBoolean();
 
 

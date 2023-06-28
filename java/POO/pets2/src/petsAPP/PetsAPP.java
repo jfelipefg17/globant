@@ -1,6 +1,7 @@
 package petsAPP;
+/**example objects constructors and accessibility with put encapsulation */
 
-//very important to import entities Dog to use Dog
+
 import petsAPP.entities.Pets;
 
 import java.util.Scanner;

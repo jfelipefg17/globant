@@ -1,8 +1,5 @@
 package petsapp.services;
 
-import petsapp.entities.Pet;
-import petsapp.entities.User;
-
 import java.util.Scanner;
 
 public class ServiceUser {
@@ -17,14 +14,14 @@ public class ServiceUser {
         System.out.println("write the race of your pet");
         String race2 = read.next();
 
-        if (!((name == name2) && (race == race2))){
-            owner();
+        if ((name == name2) && (race == race2)){
+
         }else {
             System.out.println("sorry you are not owner of " + name );
         }
     }
 
-    public User owner () {
+    public String owner () {
 
         System.out.println("write your name");
         String ownerName = read.next();
@@ -34,7 +31,7 @@ public class ServiceUser {
         int ID = num.nextInt();
 
 
-        return new User(ownerName, ID);
+        return ownerName;
     }
 
 }

@@ -11,7 +11,7 @@ public class User {
     public Date birthDate;
     public String country;
 
-        public User () {    
+        public User () {
 
         }
 

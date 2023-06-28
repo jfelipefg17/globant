@@ -16,13 +16,18 @@ import petsapp.services.ServiceUser;
  * */
 
 public class PetsAPP {
-
+//method main , hear call everything
     public static void main(String[] args) {
 
 
         ServicePet p = new ServicePet();
         ServiceUser us = new ServiceUser();
 
+
+        // declared an object
+        Pet p2;
+
+        // instantiation or create an object
         Pet p1 = p.creatPet();
 
         // i cant put p1 because in pet,java i have toString
@@ -38,7 +43,7 @@ public class PetsAPP {
         us.petOwner(p1.getName(), p1.getRace());
 
 
-        p1.setOwnerName(String.valueOf(us.owner()));
+        p1.setOwnerName(us.owner());
 
 
 
