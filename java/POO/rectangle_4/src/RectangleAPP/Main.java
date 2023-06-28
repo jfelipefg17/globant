@@ -1,5 +1,8 @@
 package RectangleAPP;
 
+import RectangleAPP.entities.Rectangle;
+import RectangleAPP.services.RectangleService;
+
 /**
  * Create a Rectangle class that models rectangles using a private
  * base attribute and a private height attribute.
@@ -22,5 +25,22 @@ package RectangleAPP;
 public class Main {
     public static void main(String[] args) {
 
+        RectangleService rs = new RectangleService();
+        Rectangle r1 = rs.createR();
+
+
+        r1.setSurface(rs.surface(r1.getBase(), r1.getHeight()));
+        r1.setPerimeter(rs.perimeter(r1.getBase(), r1.getHeight()));
+
+
+        System.out.println(r1);
+
+        rs.draw(r1.getBase(), r1.getHeight());
+
+
+
+
     }
+
+
 }
