@@ -2,6 +2,7 @@ package phraseAPP;
 /**
  * 8
  *
+ *
  * Perform a class called String that has as attributes a phrase
  * (of type of String) and its length. In the main the object will
  * be created and the user will be asked to enter a phrase that can
