@@ -1,6 +1,6 @@
 package phraseAPP;
 
-import phraseAPP.entities.String;
+import phraseAPP.entities.Phrase;
 import phraseAPP.services.StringService;
 
 import java.util.Scanner;
@@ -52,43 +52,61 @@ public class Main {
         Scanner num = new Scanner(System.in);
         Scanner read = new Scanner(System.in);
 
+
         boolean bol = true;
 
         StringService serv = new StringService();
-        String str = new String();
+        Phrase str = new Phrase();
 
         System.out.println("write a new phrase");
-        java.lang.String phrase = read.nextLine();
-        int longP = phrase.length();
+        String phr = read.nextLine();
+        str.setPhrase(phr);
+        int longP = phr.length();
+        str.setLongPhrase(longP);
 
         do {
             System.out.println("MENU");
             System.out.println(" ");
-            System.out.println("1. full fill coffee maker");
+            System.out.println("1. shows vowels");
             System.out.println(" ");
-            System.out.println("2. fill coffee maker");
+            System.out.println("2. invert phrase");
             System.out.println(" ");
-            System.out.println("3. empty coffee maker");
+            System.out.println("3. empty letters repeats");
             System.out.println(" ");
-            System.out.println("4. serve cup");
+            System.out.println("4. compare length");
             System.out.println(" ");
-            System.out.println("5. exit");
+            System.out.println("5. unify phrase");
+            System.out.println(" ");
+            System.out.println("6. replace a in the phrase for any character you want");
+            System.out.println(" ");
+            System.out.println("7. check a letter in the phrase");
+            System.out.println(" ");
+            System.out.println("8. exit");
             int opt = num.nextInt();
 
             switch (opt) {
                 case 1:
-                        str.getLongPhrase();
+                    System.out.println("the phrase has vawels" + serv.vowels(phr, longP));
                     break;
                 case 2:
-
+                    System.out.println("the invert phrase is " + serv.invertPhrase(phr, longP));
                     break;
                 case 3:
-
+                    System.out.println(serv.lettersRep( phr, longP));
                     break;
                 case 4:
-
+                    System.out.println(serv.compareLong(longP));
                     break;
                 case 5:
+                    System.out.println(serv.joinPhrase(phr));
+                    break;
+                case 6:
+                    System.out.println(serv.replaceA(phr, longP));
+                    break;
+                case 7:
+                    System.out.println(serv.letterInPhrase(phr, longP));
+                    break;
+                case 8:
                     bol = false;
                     break;
                 default:

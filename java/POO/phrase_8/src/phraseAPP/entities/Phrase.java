@@ -1,16 +1,14 @@
 package phraseAPP.entities;
 
-import phraseAPP.Main;
-
-public class String {
+public class Phrase {
     private String phrase;
     private int longPhrase;
 
-    public String () {
+    public Phrase() {
 
     }
 
-    public String(String phrase, int longPhrase) {
+    public Phrase(String phrase, int longPhrase) {
         this.phrase = phrase;
         this.longPhrase = longPhrase;
     }
