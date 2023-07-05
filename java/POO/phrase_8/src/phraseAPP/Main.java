@@ -92,10 +92,10 @@ public class Main {
                     System.out.println("the invert phrase is " + serv.invertPhrase(phr, longP));
                     break;
                 case 3:
-                    System.out.println(serv.lettersRep( phr, longP));
+                    System.out.println("the letter is in the phrase " + serv.lettersRep( phr, longP));
                     break;
                 case 4:
-                    System.out.println(serv.compareLong(longP));
+                    System.out.println("is " + serv.compareLong(longP) + " that the phrase 1 is longer than phrase 2");
                     break;
                 case 5:
                     System.out.println(serv.joinPhrase(phr));
