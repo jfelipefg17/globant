@@ -1,5 +1,12 @@
 package mathClassAPP;
 
+import mathClassAPP.entities.MathX;
+import mathClassAPP.service.MathXService;
+
+import java.util.Random;
+
+import static java.lang.Math.random;
+
 /**
  * Perform a class called Mathematics that has as attributes two real
  * numbers with which different mathematical operations will be performed.
@@ -21,6 +28,20 @@ package mathClassAPP;
  * */
 public class Main {
     public static void main(String[] args) {
+        Random random = new Random();
+        random.nextInt();
+        MathXService ms = new MathXService();
+        MathX m1 = new MathX();
 
+        m1.setNum1(random.nextInt(100));
+        System.out.println(m1.getNum1());
+        m1.setNum2(random.nextInt(100));
+        System.out.println(m1.getNum2());
+
+        System.out.println("the mayor number is " + ms.mayor(m1.getNum1(), m1.getNum2()));
+        System.out.println("-----------------------------------------------------------");
+        System.out.println("the mayor power the little is "+ ms.power(m1.getNum1(), m1.getNum2()));
+        System.out.println("-----------------------------------------------------------");
+        System.out.println("the square of little number is " + ms.square(m1.getNum1(), m1.getNum2()));
     }
 }

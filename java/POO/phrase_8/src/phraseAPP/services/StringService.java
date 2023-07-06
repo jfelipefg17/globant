@@ -1,14 +1,17 @@
 package phraseAPP.services;
 
 import java.util.Scanner;
-
+// explication of arguments and parameters , how they are reference or value
 public class StringService {
     Scanner read = new Scanner(System.in);
 
     public int vowels (String phrase, int longP) {
         int cont = 0;
-        for ( int i = 0; i <= longP; i++ ) {
-            if((phrase.substring(i,i) == "a" ) || (phrase.substring(i,i) == "e") || (phrase.substring(i,i) == "i") || (phrase.substring(i,i) == "o") || (phrase.substring(i,i) == "u") ) {
+        String sub;
+        for ( int i = 1; i <= longP; i++ ) {
+            sub = "";
+            sub = phrase.substring(i,i);
+            if( sub == "a" || sub == "e" || sub == "i" || sub == "o" || sub == "u") {
                 cont ++;
             }
         }
@@ -46,7 +49,7 @@ public class StringService {
         int longP2;
         String ph;
         boolean ss;
-// is is good but when i ride phrase with spaces, i think is not working
+// is is good but when i ride phrase with spaces, it count spaces like they are chars
         System.out.println("write a new phrase ");
         ph = read.nextLine();
         longP2 = ph.length();
@@ -72,12 +75,28 @@ public class StringService {
     }
 
     public String replaceA(String phrase, int longP) {
-        return null;
 
+        String let;
+
+        System.out.println("what letter do you want to put in the phrase");
+        let = read.next();
+
+        for ( int i = 0; i <= longP; i++ ) {
+            if (phrase.substring(i,i) == "a") {
+                phrase.replace(phrase.substring(i,i),let);
+            }
+        }
+        return phrase;
     }
 
-    public boolean  letterInPhrase (String phrase, int longP) {
-        return false;
+    public boolean  letterInPhrase (String phrase) {
+        boolean ff = false;
+        System.out.println("write the char you want to check if is on the phrase");
+        String ch = read.nextLine();
+        if (phrase.contains(ch)){
+            ff = true;
+        }
+        return ff;
 
     }
 }

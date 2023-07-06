@@ -86,25 +86,39 @@ public class Main {
 
             switch (opt) {
                 case 1:
+                    System.out.println("-----------------------------------------------------");
                     System.out.println("the phrase has vawels" + serv.vowels(phr, longP));
+                    System.out.println("-----------------------------------------------------");
                     break;
                 case 2:
+                    System.out.println("-----------------------------------------------------");
                     System.out.println("the invert phrase is " + serv.invertPhrase(phr, longP));
+                    System.out.println("-----------------------------------------------------");
                     break;
                 case 3:
+                    System.out.println("-----------------------------------------------------");
                     System.out.println("the letter is in the phrase " + serv.lettersRep( phr, longP));
+                    System.out.println("-----------------------------------------------------");
                     break;
                 case 4:
+                    System.out.println("-----------------------------------------------------");
                     System.out.println("is " + serv.compareLong(longP) + " that the phrase 1 is longer than phrase 2");
+                    System.out.println("-----------------------------------------------------");
                     break;
                 case 5:
-                    System.out.println(serv.joinPhrase(phr));
+                    System.out.println("-----------------------------------------------------");
+                    System.out.println("the new phrase is " + serv.joinPhrase(phr));
+                    System.out.println("-----------------------------------------------------");
                     break;
                 case 6:
-                    System.out.println(serv.replaceA(phr, longP));
+                    System.out.println("-----------------------------------------------------");
+                    System.out.println("the new phrase is  " + serv.replaceA(phr, longP));
+                    System.out.println("-----------------------------------------------------");
                     break;
                 case 7:
-                    System.out.println(serv.letterInPhrase(phr, longP));
+                    System.out.println("-----------------------------------------------------");
+                    System.out.println("is" + serv.letterInPhrase(phr) );
+                    System.out.println("-----------------------------------------------------");
                     break;
                 case 8:
                     bol = false;
