@@ -1,5 +1,8 @@
 package dateClassAPP;
 
+import dateClassAPP.entities.Date1;
+import dateClassAPP.service.Date1Service;
+
 /**
  * Let’s put aside for a moment the concept of POO, now we will work
  * only with the Date class. In this exercise we will have to instantiate
@@ -16,6 +19,14 @@ package dateClassAPP;
  * */
 public class Main {
     public static void main(String[] args) {
+
+        //Date1 p1 = new Date1();
+        //what is the difference between and the 26 line
+        Date1Service d1 = new Date1Service();
+        Date1 p1 = d1.UserDate();
+
+        System.out.println(p1);
+
 
     }
 }
