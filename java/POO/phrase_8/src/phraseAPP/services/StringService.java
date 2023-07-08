@@ -8,37 +8,36 @@ public class StringService {
     public int vowels (String phrase, int longP) {
         int cont = 0;
         String sub;
-        for ( int i = 1; i <= longP; i++ ) {
+        for ( int i = 0; i < longP; i++ ) {
             sub = "";
-            sub = phrase.substring(i,i);
-            if( sub == "a" || sub == "e" || sub == "i" || sub == "o" || sub == "u") {
+            sub = phrase.substring(i,i+1);
+            if((sub.equals("a")) || (sub.equals("e")) || (sub.equals("i")) || (sub.equals("o")) || (sub.equals("u"))) {
                 cont ++;
             }
         }
     return cont;
     }
 
-    public String invertPhrase (String phrase, int longP){
-        String phrase2 = "";
-        int j = longP;
+    public String invertPhrase (String phrase){
+        StringBuilder ph = new StringBuilder(phrase);
 
-        for ( int i = 0; i <= longP; i++ ) {
-            //learn how to use replace function
-            phrase2.replace(phrase.substring(i,i),phrase.substring(j,j));
-            longP --;
-        }
-    return phrase2;
+
+        phrase = ph.reverse().toString();
+    return phrase;
     }
 
     public int lettersRep (String phrase, int longP) {
         int cont = 0;
         String let = "";
+        String sub;
 
         System.out.println("what letter do you want to check");
         let = read.nextLine();
 
-        for ( int i = 0; i <= longP; i++ ) {
-            if (phrase.substring(i,i) == let) {
+        for ( int i = 0; i < longP; i++ ) {
+            sub = "";
+            sub = phrase.substring(i,i+1);
+            if ( sub.equals(let)) {
                 cont ++;
             }
         }
@@ -76,17 +75,15 @@ public class StringService {
 
     public String replaceA(String phrase, int longP) {
 
+        String phrase2;
         String let;
 
-        System.out.println("what letter do you want to put in the phrase");
+        System.out.println("what character do you want to put in the phrase");
         let = read.next();
 
-        for ( int i = 0; i <= longP; i++ ) {
-            if (phrase.substring(i,i) == "a") {
-                phrase.replace(phrase.substring(i,i),let);
-            }
-        }
-        return phrase;
+        phrase2 = phrase.replace("a",let);
+
+        return phrase2;
     }
 
     public boolean  letterInPhrase (String phrase) {

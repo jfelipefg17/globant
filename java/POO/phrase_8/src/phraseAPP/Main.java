@@ -71,7 +71,7 @@ public class Main {
             System.out.println(" ");
             System.out.println("2. invert phrase");
             System.out.println(" ");
-            System.out.println("3. empty letters repeats");
+            System.out.println("3. letters repeats");
             System.out.println(" ");
             System.out.println("4. compare length");
             System.out.println(" ");
@@ -87,12 +87,12 @@ public class Main {
             switch (opt) {
                 case 1:
                     System.out.println("-----------------------------------------------------");
-                    System.out.println("the phrase has vawels" + serv.vowels(phr, longP));
+                    System.out.println("the phrase has vowels " + serv.vowels(phr, longP));
                     System.out.println("-----------------------------------------------------");
                     break;
                 case 2:
                     System.out.println("-----------------------------------------------------");
-                    System.out.println("the invert phrase is " + serv.invertPhrase(phr, longP));
+                    System.out.println("the invert phrase is " + serv.invertPhrase(phr));
                     System.out.println("-----------------------------------------------------");
                     break;
                 case 3:

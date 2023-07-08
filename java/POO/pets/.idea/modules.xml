@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/POO.iml" filepath="$PROJECT_DIR$/POO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../arrayClass/arrayClass.iml" filepath="$PROJECT_DIR$/../arrayClass/arrayClass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../birthDate_12/birthDate_12.iml" filepath="$PROJECT_DIR$/../birthDate_12/birthDate_12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../dateClass_11/dateClass_11.iml" filepath="$PROJECT_DIR$/../dateClass_11/dateClass_11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../mathClass_9/mathClass_9.iml" filepath="$PROJECT_DIR$/../mathClass_9/mathClass_9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pets.iml" filepath="$PROJECT_DIR$/pets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../phrase_8/phrase_8.iml" filepath="$PROJECT_DIR$/../phrase_8/phrase_8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../store_14/store_14.iml" filepath="$PROJECT_DIR$/../store_14/store_14.iml" />
     </modules>
   </component>
 </project>
