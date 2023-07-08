@@ -26,7 +26,7 @@ import static java.lang.Math.random;
  * of the two values. Before calculating the square root one must
  * obtain the absolute value of the number.
  * */
-public class Main {
+public class    Main {
     public static void main(String[] args) {
         Random random = new Random();
         random.nextInt();
