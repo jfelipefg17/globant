@@ -2,13 +2,14 @@ package dateClassAPP.service;
 
 import dateClassAPP.entities.Date1;
 
+import java.util.Date;
 import java.util.Scanner;
 
 
 public class Date1Service {
     Scanner num = new Scanner(System.in);
 
-    public Date1 UserDate () {
+    public  Date1 UserDate () {
 
         System.out.println("day");
         System.out.println("---");

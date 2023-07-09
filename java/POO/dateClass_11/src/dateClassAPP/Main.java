@@ -3,6 +3,8 @@ package dateClassAPP;
 import dateClassAPP.entities.Date1;
 import dateClassAPP.service.Date1Service;
 
+import java.util.Date;
+
 /**
  * Let’s put aside for a moment the concept of POO, now we will work
  * only with the Date class. In this exercise we will have to instantiate
@@ -20,10 +22,12 @@ import dateClassAPP.service.Date1Service;
 public class Main {
     public static void main(String[] args) {
 
-        //Date1 p1 = new Date1();
-        //what is the difference between and the 26 line
+
+        // Date1 p1 = new Date1();
         Date1Service d1 = new Date1Service();
+        // user data is a method of date service
         Date1 p1 = d1.UserDate();
+        // if i declare p1 like that in the future i can call p1. what ever other method that has date service
 
         System.out.println(p1);
 

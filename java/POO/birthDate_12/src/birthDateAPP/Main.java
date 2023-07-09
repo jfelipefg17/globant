@@ -1,4 +1,8 @@
 package birthDateAPP;
+
+import birthDateAPP.entities.Person;
+import birthDateAPP.service.PersonService;
+
 /***
  *Implement the Person class. A person has a name and a date of birth
  *  (Type Date), empty constructor, parameterized constructor, get
@@ -24,6 +28,16 @@ package birthDateAPP;
 
 public class Main {
     public static void main(String[] args) {
+
+        Person p1 = new Person();
+        PersonService s1 = new PersonService();
+
+        s1 .creatPerson();
+        p1.setAge(s1.calculateDate(p1.getBirth()));
+        
+        System.out.println("it is " + s1.littleThan(p1.getAge())+" you are mayor");
+
+        s1.showingPerson(p1);
 
     }
 }
