@@ -22,6 +22,7 @@ import java.util.Date;
 public class Main {
     public static void main(String[] args) {
 
+        // in this way i am not using date object
 
         // Date1 p1 = new Date1();
         Date1Service d1 = new Date1Service();

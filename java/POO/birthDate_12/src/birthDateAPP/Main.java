@@ -34,7 +34,7 @@ public class Main {
 
         s1 .creatPerson();
         p1.setAge(s1.calculateDate(p1.getBirth()));
-        
+
         System.out.println("it is " + s1.littleThan(p1.getAge())+" you are mayor");
 
         s1.showingPerson(p1);
