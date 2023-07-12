@@ -24,7 +24,7 @@ public class PersonService {
         System.out.println("write your birth year: ");
         int year = num.nextInt();
 
-        LocalDate birth =   LocalDate.of(year,month,day);
+        LocalDate birth = LocalDate.of(year,month,day);
 
         System.out.println( birth.getDayOfMonth() + "/" + birth.getMonth() + "/" + birth.getYear());
 
