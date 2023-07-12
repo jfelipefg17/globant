@@ -1,5 +1,8 @@
 package storeAPP;
 
+import storeAPP.entities.Movil;
+import storeAPP.service.MovilService;
+
 /**
  * A store that sells mobile phones wants to keep track of every
  * product it owns in a computer system. To do this, we will create
@@ -26,6 +29,13 @@ package storeAPP;
  * */
 public class Main {
     public static void main(String[] args) {
+
+        MovilService s1 = new MovilService();
+        Movil m1 = s1.cell();
+
+        System.out.println(m1);
+
+
 
     }
 }
