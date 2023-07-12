@@ -1,16 +1,17 @@
 package birthDateAPP.entities;
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class Person {
 
     private String name;
-    private Date birth;
+    private LocalDate birth;
     private int age;
 
     public Person (){
 
     }
-    public Person (String name, Date birth){
+    public Person (String name, LocalDate birth){
         this.name = name;
         this.birth = birth;
     }
@@ -23,11 +24,11 @@ public class Person {
         this.name = name;
     }
 
-    public Date getBirth() {
+    public LocalDate getBirth() {
         return birth;
     }
 
-    public void setBirth(Date birth) {
+    public void setBirth(LocalDate birth) {
         this.birth = birth;
     }
 

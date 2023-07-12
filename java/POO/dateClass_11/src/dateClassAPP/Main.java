@@ -1,9 +1,10 @@
 package dateClassAPP;
 
-import dateClassAPP.entities.Date1;
-import dateClassAPP.service.Date1Service;
+
+import java.time.LocalDate;
 
 import java.util.Date;
+import java.util.Scanner;
 
 /**
  * Let’s put aside for a moment the concept of POO, now we will work
@@ -21,17 +22,41 @@ import java.util.Date;
  * */
 public class Main {
     public static void main(String[] args) {
+        Scanner num = new Scanner(System.in);
 
-        // in this way i am not using date object
+        System.out.println("write a day ");
+        int day = num.nextInt();
+        num.nextLine();
+        System.out.println("-----");
+        System.out.println("write a month");
+        int month = num.nextInt();
+        num.nextLine();
+        System.out.println("-----");
+        System.out.println("write a year");
+        int year = num.nextInt();
+        num.nextLine();
+        System.out.println("-----");
+        System.out.println( day +"/" + month +"/" + year);
 
-        // Date1 p1 = new Date1();
-        Date1Service d1 = new Date1Service();
-        // user data is a method of date service
-        Date1 p1 = d1.UserDate();
-        // if i declare p1 like that in the future i can call p1. what ever other method that has date service
+        Date date1 = new Date(year-1900, month-1, day);
 
-        System.out.println(p1);
+        System.out.println(date1);
+        Date date2 = new Date();
+        System.out.println(date2);
 
+        int years = date2.getYear() - date1.getYear();
 
+        System.out.println("------------");
+        System.out.println(years);
+        System.out.println("------------");
+
+        LocalDate date3 = LocalDate.of(year,month,day);
+        LocalDate date4 = LocalDate.now();
+
+        int years2 = date4.getYear() - date3.getYear();
+
+        System.out.println("------------");
+        System.out.println(years2);
+        System.out.println("------------");
     }
 }
