@@ -14,6 +14,7 @@ public class RentService {
 
 
     public Rent creatRent () {
+        // change available boolean
         System.out.println("-----------------------");
         System.out.println("write the name of the movie");
         String tittle = read.nextLine();

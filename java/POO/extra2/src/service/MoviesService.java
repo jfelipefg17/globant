@@ -25,11 +25,17 @@ public class MoviesService {
         System.out.println("year");
         int year = num.nextInt();
         System.out.println("-----------------------");
-        System.out.println("write duration hours-minutes-seconds");
-        String time = read.nextLine();
-        LocalTime duration = LocalTime.parse(time);
+        System.out.println("write duration hours");
+        int hrs = num.nextInt();
+        System.out.println("-----------------------");
+        System.out.println("write duration min");
+        int min = num.nextInt();
 
-        return new Movies(tittle,genre,year,duration);
+        LocalTime duration = LocalTime.of(hrs,min);
+
+        boolean available = true;
+
+        return new Movies(tittle,genre,year,duration,available);
 
     }
 
@@ -40,7 +46,8 @@ public class MoviesService {
     public void searchTittle(String tittle) {
 
     }
-    public void searchGenre(String genre) {
+    public void searchGenre(String genre
+    ) {
 
     }
 }
