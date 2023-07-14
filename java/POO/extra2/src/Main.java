@@ -1,3 +1,6 @@
+import entities.Movies;
+import service.MoviesService;
+
 import java.util.Scanner;
 
 public class Main {
@@ -6,24 +9,32 @@ public class Main {
         Scanner num = new Scanner(System.in);
         boolean bol = true;
 
+        Movies [] listM = new Movies[5];
+        MoviesService s1 = new MoviesService();
+
+
+        for ( int i = 0; i < 5; i++ ){
+            System.out.println("---------------------");
+            System.out.println("add movie a movie");
+            System.out.println(" ");
+            listM [i] = s1.creatMovie();
+        }
+
         do {
-            System.out.println("MENU");
-            System.out.println(" ");
-            System.out.println("1. create a movie");
-            System.out.println(" ");
-            System.out.println("2. rent");
-            System.out.println(" ");
-            System.out.println("3. list available movies");
-            System.out.println(" ");
-            System.out.println("4. search movie by tittle ");
-            System.out.println(" ");
-            System.out.println("5. search movie by genre ");
-            System.out.println(" ");
-            System.out.println("6. search movie by rent date ");
-            System.out.println(" ");
-            System.out.println("7. price of my rent ");
-            System.out.println(" ");
-            System.out.println("8. exit");
+            System.out.println("-------------------------------- ");
+            System.out.println("1. rent");
+            System.out.println("-------------------------------- ");
+            System.out.println("2. list available movies");
+            System.out.println("-------------------------------- ");
+            System.out.println("3. search movie by tittle ");
+            System.out.println("-------------------------------- ");
+            System.out.println("4. search movie by genre ");
+            System.out.println("-------------------------------- ");
+            System.out.println("5. search movie by rent date ");
+            System.out.println("-------------------------------- ");
+            System.out.println("6. price of my rent ");
+            System.out.println("-------------------------------- ");
+            System.out.println("7. exit");
             int opt = num.nextInt();
 
             switch (opt) {
@@ -34,7 +45,7 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("-----------------------------------------------------");
-                    System.out.println();
+                    s1.listMoviesAvailable(listM);
                     System.out.println("-----------------------------------------------------");
                     break;
                 case 3:
@@ -58,11 +69,6 @@ public class Main {
                     System.out.println("-----------------------------------------------------");
                     break;
                 case 7:
-                    System.out.println("-----------------------------------------------------");
-                    System.out.println();
-                    System.out.println("-----------------------------------------------------");
-                    break;
-                case 8:
                     bol = false;
                     break;
                 default:

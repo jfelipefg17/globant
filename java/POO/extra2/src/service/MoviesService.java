@@ -39,15 +39,30 @@ public class MoviesService {
 
     }
 
-    public String [] listMoviesAvailable() {
-        return null;
+    public void listMoviesAvailable( Movies [] listM) {
+
+        for ( int i = 1; i <=5; i++ ){
+            System.out.println("------------------");
+            System.out.println("TITTLE: " + listM[i].getTittle());
+            System.out.println("------------------");
+            System.out.println("GENRE: " + listM[i].getGenre());
+            System.out.println("------------------");
+            System.out.println("YEAR: " + listM[i].getYear());
+            System.out.println("------------------");
+            System.out.println("DURATION: " + listM[i].getDuration());
+            System.out.println("------------------");
+            System.out.println("AVAILABLE: " + listM[i].isAvailable());
+            System.out.println("------------------");
+        }
+
+
     }
 
     public void searchTittle(String tittle) {
+        //return boolena , sout == listm [i].get tittle
 
     }
-    public void searchGenre(String genre
-    ) {
-
+    public void searchGenre(String genre) {
+        //return boolena , sout == listm [i].get genre
     }
 }

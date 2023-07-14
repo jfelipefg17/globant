@@ -27,8 +27,10 @@ public class RentService {
         System.out.println();
         System.out.println("-----------------------");
         System.out.println("-----------------------");
+        //price of the rent
         return new Rent();
     }
+
 
     public String [] listMoviesRent() {
         return null;
