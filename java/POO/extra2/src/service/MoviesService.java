@@ -41,7 +41,7 @@ public class MoviesService {
 
     public void listMoviesAvailable( Movies [] listM) {
 
-        for ( int i = 1; i <=5; i++ ){
+        for ( int i = 1; i <= listM.length; i++ ){
             System.out.println("------------------");
             System.out.println("TITTLE: " + listM[i].getTittle());
             System.out.println("------------------");
@@ -58,11 +58,34 @@ public class MoviesService {
 
     }
 
-    public void searchTittle(String tittle) {
-        //return boolena , sout == listm [i].get tittle
+    public void searchTittle(Movies [] listM) {
 
+        System.out.println("write the movie tittle");
+        String movie = read.nextLine();
+        for ( int i = 1; i <= listM.length; i++ ) {
+            if (movie.equals(listM[i].getTittle())) {
+                System.out.println("--------------");
+                System.out.println("WE HAVE THE MOVIE");
+                System.out.println("this is the movie" + listM[i].getTittle());
+            }else {
+                System.out.println("-------------");
+                System.out.println("WE DONT HAVE THE MOVIE");
+            }
+        }
     }
-    public void searchGenre(String genre) {
-        //return boolena , sout == listm [i].get genre
+    public void searchGenre(Movies [] listM) {
+        System.out.println("write the movie tittle");
+        String genre = read.nextLine();
+        for ( int i = 1; i <= listM.length; i++ ) {
+            if (genre.equals(listM[i].getGenre())) {
+                System.out.println("--------------");
+                System.out.println("WE HAVE THE GENRE");
+                System.out.println("this is the movie" + listM[i].getTittle());
+            }else {
+                System.out.println("-------------");
+                System.out.println("WE DONT HAVE THE Genre");
+            }
+
+        }
     }
 }
