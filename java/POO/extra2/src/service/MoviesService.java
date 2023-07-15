@@ -1,6 +1,7 @@
 package service;
 
 import entities.Movies;
+import entities.Rent;
 
 
 import java.time.LocalDate;
@@ -11,6 +12,8 @@ public class MoviesService {
 
     Scanner read = new Scanner(System.in);
     Scanner num = new Scanner(System.in);
+
+    RentService r1 = new RentService();
 
 
     public Movies creatMovie () {
@@ -39,53 +42,51 @@ public class MoviesService {
 
     }
 
-    public void listMoviesAvailable( Movies [] listM) {
+    public void listMoviesAvailable( Movies [] listM,Rent [] listR) {
 
-        for ( int i = 1; i <= listM.length; i++ ){
-            System.out.println("------------------");
-            System.out.println("TITTLE: " + listM[i].getTittle());
-            System.out.println("------------------");
-            System.out.println("GENRE: " + listM[i].getGenre());
-            System.out.println("------------------");
-            System.out.println("YEAR: " + listM[i].getYear());
-            System.out.println("------------------");
-            System.out.println("DURATION: " + listM[i].getDuration());
-            System.out.println("------------------");
-            System.out.println("AVAILABLE: " + listM[i].isAvailable());
-            System.out.println("------------------");
+        for ( int i = 0  ; i < listR.length; i++ ){
+            for ( int j = 0  ; j < listM.length; j++ ) {
+                System.out.println(j + " " + listM[j].toString());
+            }
+            listR[i] = r1.creatRent(listM);
         }
+
+
 
 
     }
 
-    public void searchTittle(Movies [] listM) {
+    public boolean searchTittle(Movies [] listM) {
 
+        boolean ss = true;
+        System.out.println("LEST CHECH A MOVIE IN THE LIST");
         System.out.println("write the movie tittle");
         String movie = read.nextLine();
-        for ( int i = 1; i <= listM.length; i++ ) {
+        for ( int i = 0; i < listM.length; i++ ) {
             if (movie.equals(listM[i].getTittle())) {
-                System.out.println("--------------");
-                System.out.println("WE HAVE THE MOVIE");
-                System.out.println("this is the movie" + listM[i].getTittle());
+                ss = true;
+                break;
             }else {
-                System.out.println("-------------");
-                System.out.println("WE DONT HAVE THE MOVIE");
+                ss = false;
             }
         }
+        return ss;
     }
-    public void searchGenre(Movies [] listM) {
+    public boolean searchGenre(Movies [] listM) {
+
+        boolean ss = true;
+        System.out.println("LEST CHECH A MOVIE IN THE LIST");
         System.out.println("write the movie tittle");
         String genre = read.nextLine();
-        for ( int i = 1; i <= listM.length; i++ ) {
+        for ( int i = 0; i < listM.length; i++ ) {
             if (genre.equals(listM[i].getGenre())) {
-                System.out.println("--------------");
-                System.out.println("WE HAVE THE GENRE");
-                System.out.println("this is the movie" + listM[i].getTittle());
+            ss = true;
+            break;
             }else {
-                System.out.println("-------------");
-                System.out.println("WE DONT HAVE THE Genre");
+            ss = false;
             }
 
         }
+        return ss;
     }
 }

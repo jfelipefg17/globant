@@ -3,33 +3,43 @@ import entities.Rent;
 import service.MoviesService;
 import service.RentService;
 
-import java.util.Scanner;
 
 public class Main {
-    Scanner read= new Scanner(System.in);
-    Scanner num = new Scanner(System.in);
-
     public static void main(String[] args) {
 
-
-
-
-        Movies [] listM = new Movies[5];
+        Movies[] listM = new Movies[5];
         MoviesService s1 = new MoviesService();
+        Rent[] listR = new Rent[3];
         RentService r1 = new RentService();
 
 
-
-        for ( int i = 0; i < 5; i++ ){
-            listM [i] = s1.creatMovie();
+        for ( int i = 0; i < listM.length; i++ ) {
+            listM[i] = s1.creatMovie();
         }
 
-        for ( int i = 0; i < 3; i++ ) {
-            r1.creatRent(listM);
+        s1.listMoviesAvailable(listM,listR);
+
+
+
+        boolean asw1 = s1.searchTittle(listM);
+        if(asw1) {
+            System.out.println("==============================");
+            System.out.println("we have the movie");
+        } else {
+            System.out.println("==============================");
+            System.out.println("we dont have the movie");
         }
-        s1.listMoviesAvailable(listM);
-        s1.searchTittle(listM);
-        s1.searchGenre(listM);
+
+        boolean asw2 = s1.searchGenre(listM);
+        if(asw2) {
+            System.out.println("==============================");
+            System.out.println("we have the movie");
+        } else {
+            System.out.println("==============================");
+            System.out.println("we dont have the movie");
+
+        }
+        r1.listMoviesRent(listR);
 
     }
 }

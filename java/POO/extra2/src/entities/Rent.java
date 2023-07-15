@@ -7,12 +7,12 @@ public class Rent {
     private String tittle;
     private LocalDate DateStart;
     private LocalDate DateFinish;
-    private int price;
+    private double price;
 
     public Rent() {
     }
 
-    public Rent(String tittle, LocalDate dateStart, LocalDate dateFinish, int price) {
+    public Rent(String tittle, LocalDate dateStart, LocalDate dateFinish, double price) {
         this.tittle = tittle;
         DateStart = dateStart;
         DateFinish = dateFinish;
@@ -43,11 +43,21 @@ public class Rent {
         DateFinish = dateFinish;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Rent{" +
+                "tittle='" + tittle + '\'' +
+                ", DateStart=" + DateStart +
+                ", DateFinish=" + DateFinish +
+                ", price=" + price +
+                '}';
     }
 }

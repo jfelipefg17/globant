@@ -60,4 +60,15 @@ public class Movies {
     public void setAvailable(boolean available) {
         this.available = available;
     }
+
+    @Override
+    public String toString() {
+        return "Movies{" +
+                "tittle='" + tittle + '\'' +
+                ", genre='" + genre + '\'' +
+                ", year=" + year +
+                ", duration=" + duration +
+                ", available=" + available +
+                '}';
+    }
 }
