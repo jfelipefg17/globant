@@ -12,17 +12,14 @@ public class Main {
         ServiceRoutine r1 = new ServiceRoutine();
         ServiceClient c1 = new ServiceClient();
 
-                        //  3
-        for( int i = 0; i < 2 ;i++ ){
+
+        for( int i = 0; i < 5 ;i++ ){
             c1.registerClient();
         }
-                        //  3
-        for( int i = 0; i < 2 ;i++ ){
+        for( int i = 0; i < 5 ;i++ ){
             r1.registerRoutine();
         }
-        /*
-        add the clients and routines to the arraylists
-        */
+
         System.out.println("===================");
         System.out.println("===================");
         System.out.println("===================");
@@ -70,6 +67,8 @@ public class Main {
         r1.deleteRoutine(k);
         //print all routines with changes
         r1.routines();
+
+
 
     }
 }
