@@ -8,7 +8,7 @@ public class HangmanServices {
 
     Scanner read = new Scanner(System.in);
     Scanner num = new Scanner(System.in);
-
+    
     public Hangman creatGame () {
 
         System.out.println("write the word");

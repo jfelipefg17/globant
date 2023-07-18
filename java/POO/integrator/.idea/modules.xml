@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../../../../../../Desktop/DesafioGrupal3/DesafioGrupal3.iml" filepath="$PROJECT_DIR$/../../../../../../Desktop/DesafioGrupal3/DesafioGrupal3.iml" />
       <module fileurl="file://$PROJECT_DIR$/../extra2/extra2.iml" filepath="$PROJECT_DIR$/../extra2/extra2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../hangingGame/hangingGame.iml" filepath="$PROJECT_DIR$/../hangingGame/hangingGame.iml" />
       <module fileurl="file://$PROJECT_DIR$/integrator.iml" filepath="$PROJECT_DIR$/integrator.iml" />
     </modules>
   </component>
