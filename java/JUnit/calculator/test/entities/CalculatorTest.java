@@ -22,4 +22,9 @@ public class CalculatorTest {
     public void discount10(){
     assertEquals(90.0,s1.discount10(c1.getNum1()));
     }
+
+    @Test
+    public void maxDiscount(){
+        assertEquals(70.0,s1.maxDiscount(c1.getNum1()));
+    }
 }

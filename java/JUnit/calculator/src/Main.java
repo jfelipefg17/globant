@@ -16,6 +16,7 @@ public class Main {
         int n = num.nextInt();
         c1.setNum1(n);
         System.out.println("your price with discount is: " +s1.discount10(c1.getNum1()));
+        System.out.println("your price with discount is: " +s1.maxDiscount(c1.getNum1()));
 
 
     }

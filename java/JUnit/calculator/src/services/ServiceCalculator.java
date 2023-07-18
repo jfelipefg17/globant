@@ -7,5 +7,11 @@ public class ServiceCalculator {
         n -= (n * 10) / 100;
         return n;
 
+
+    }
+
+    public double maxDiscount (double n) {
+        n -= (n*30) / 100;
+        return n;
     }
 }
