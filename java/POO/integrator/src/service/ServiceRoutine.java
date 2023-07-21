@@ -1,6 +1,5 @@
 package service;
 
-import entities.Client;
 import entities.Routine;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -15,7 +14,7 @@ public class ServiceRoutine {
 
     List<Routine> listR = new ArrayList<Routine>();
 
-    public Routine registerRoutine() {
+    public void registerRoutine() {
 
         System.out.println("write your id");
         int id = num.nextInt();
@@ -35,9 +34,6 @@ public class ServiceRoutine {
 
         listR.add(new Routine(id,name,duration,dif,obj));
 
-
-
-        return new Routine(id,name,duration,dif,obj);
     }
 
     public void routines () {

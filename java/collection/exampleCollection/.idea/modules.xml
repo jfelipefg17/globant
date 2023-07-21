@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/exampleCollection.iml" filepath="$PROJECT_DIR$/exampleCollection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../poo/integrator/integrator.iml" filepath="$PROJECT_DIR$/../../poo/integrator/integrator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../iterator/iterator.iml" filepath="$PROJECT_DIR$/../iterator/iterator.iml" />
     </modules>
   </component>
 </project>
