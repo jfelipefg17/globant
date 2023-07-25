@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../poo/example1/integrator.iml" filepath="$PROJECT_DIR$/../../poo/example1/integrator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../iterator/iterator.iml" filepath="$PROJECT_DIR$/../iterator/iterator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iteratorr.iml" filepath="$PROJECT_DIR$/iteratorr.iml" />
+    </modules>
+  </component>
+</project>

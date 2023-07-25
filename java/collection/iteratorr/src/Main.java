@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
-
 public class Main {
+
     public static void main(String[] args) {
 
         ArrayList<String> list = new ArrayList<>();
@@ -9,30 +9,32 @@ public class Main {
         list.add("B");
         list.add("C");
 
-        //create the iterator
+         //create the iterator
         Iterator<String> it = list.iterator();
         System.out.println("elements in list");
 
 
-        // hasnext return ture , that means you have to work with loop while
+         // hasnext return ture , that means you have to work with loop while
         while (it.hasNext()) {
             System.out.println(it.next()+" ");
         }
-        System.out.println(" ");
 
-        // delete while you loop the list
+        System.out.println(" ");
+        it = list.iterator();
+
+         // delete while you loop the list
         while (it.hasNext()) {
             if (it.next().equals("B")) {
-                it.remove();
-            }
+                it.remove();}
         }
+
         System.out.println(" ");
+        it = list.iterator();
 
         while (it.hasNext()) {
             System.out.println(it.next()+" ");
         }
+
         System.out.println(" ");
-
     }
-
 }
