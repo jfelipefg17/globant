@@ -4,6 +4,7 @@ import entities.Perro;
 
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class ServicioPerro {
@@ -30,6 +31,23 @@ public class ServicioPerro {
         for ( Perro var : lista ) {
             System.out.println(var.toString());
         }
+    }
+
+    public void deletePet (String name) {
+
+        Iterator<Perro> it = lista.iterator();
+
+        while (it.hasNext()) {
+            if (it.next().getNombre().equals(name)) {
+                it.remove();
+                System.out.println("you delete the dog");
+                break;
+            }else {
+                System.out.println("the pet is not on the list");
+                break;
+            }
+        }
 
     }
+
 }
