@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../example1/example1.iml" filepath="$PROJECT_DIR$/../example1/example1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example2.iml" filepath="$PROJECT_DIR$/example2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../exampleCollection/exampleCollection.iml" filepath="$PROJECT_DIR$/../exampleCollection/exampleCollection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../poo/birthDate_12/birthDate_12.iml" filepath="$PROJECT_DIR$/../../poo/birthDate_12/birthDate_12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../poo/book/book.iml" filepath="$PROJECT_DIR$/../../poo/book/book.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../comparator/comparator.iml" filepath="$PROJECT_DIR$/../comparator/comparator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../poo/dateClass_11/dateClass_11.iml" filepath="$PROJECT_DIR$/../../poo/dateClass_11/dateClass_11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../JUnit/dateValidator/dateValidator.iml" filepath="$PROJECT_DIR$/../../JUnit/dateValidator/dateValidator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example3.iml" filepath="$PROJECT_DIR$/example3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../example4/example4.iml" filepath="$PROJECT_DIR$/../example4/example4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../poo/extra2/extra2.iml" filepath="$PROJECT_DIR$/../../poo/extra2/extra2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../poo/people/people.iml" filepath="$PROJECT_DIR$/../../poo/people/people.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../poo/store_14/store_14.iml" filepath="$PROJECT_DIR$/../../poo/store_14/store_14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../poo/vehiculo/vehiculo.iml" filepath="$PROJECT_DIR$/../../poo/vehiculo/vehiculo.iml" />
     </modules>
   </component>
 </project>
