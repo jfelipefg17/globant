@@ -24,6 +24,7 @@ public class Main {
             System.out.println("want delete another country");
             anw = boo.nextBoolean();
         }while (anw);
-        
+
+        s1.printCountry();
     }
 }
