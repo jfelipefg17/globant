@@ -1,11 +1,10 @@
 package service;
 
 import entities.Movie;
-import javafx.util.converter.LocalTimeStringConverter;
 
-import java.lang.reflect.Modifier;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class ServiceMovies {
@@ -37,6 +36,45 @@ public class ServiceMovies {
     }
 
     public void printList () {
+        for (Movie var : listM) {
+            System.out.println(var);
+        }
+    }
+
+    public void printMovis1Hour () {
+        for (Movie var : listM)  {
+            int hrs = 1;
+            int seg = 0;
+            LocalTime now = LocalTime.of(hrs,seg);
+            if (var.getDuration().isAfter(now)) {
+                System.out.println(var);
+            }
+        }
+    }
+
+    public void orderTimeHighest () {
+        Collections.sort(listM, (Movie m1, Movie m2) -> m1.getDuration().compareTo(m2.getDuration()));
+        for (Movie var : listM) {
+            System.out.println(var);
+        }
+    }
+
+    public void orderTimeLowest () {
+        Collections.sort(listM, (Movie m1, Movie m2) -> m2.getDuration().compareTo(m1.getDuration()));
+        for (Movie var : listM) {
+            System.out.println(var);
+        }
+    }
+
+    public void orderTittle () {
+        Collections.sort(listM, (Movie m1, Movie m2) -> m1.getTittle().compareTo(m2.getTittle()));
+        for (Movie var : listM) {
+            System.out.println(var);
+        }
+    }
+
+    public void orderDirector () {
+        Collections.sort(listM, (Movie m1, Movie m2) -> m1.getDirector().compareTo(m2.getDirector()));
         for (Movie var : listM) {
             System.out.println(var);
         }
