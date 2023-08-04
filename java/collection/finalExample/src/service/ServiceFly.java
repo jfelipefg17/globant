@@ -2,10 +2,9 @@ package service;
 
 import entities.Fly;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.*;
 
 public class ServiceFly {
 
@@ -17,18 +16,24 @@ public class ServiceFly {
 
     public void createFly () {
 
+        LocalDate date;
+        LocalTime duration;
 
         System.out.println("write code of the fly EXAMPLE (AAA512) ");
-        String code = read.nextLine();
         System.out.println("==================");
-        System.out.println("");
+        String code = read.nextLine();
         int id = random.nextInt(10000 - 99999);
         boolean ava = true;
-        //local date
+        System.out.println("write date of the fly (MM/DD) ");
+        System.out.println("==================");
+        date = LocalDate.parse(read.nextLine());
+        System.out.println("write duration of the fly (HH/MM) ");
+        System.out.println("==================");
+        duration = LocalTime.parse(read.nextLine());
+        flyList.put(code,new Fly(code,id,ava,date,duration));
 
-        // local time
-
-        //flyList.put(code,new Fly(code,id,ava,date,time));
+        System.out.println("YOU ADD A NEW FLY");
+        System.out.println("||||||||||||||||||||||||||||||||||||||||||||");
     }
 
     public void showFly () {
@@ -52,19 +57,18 @@ public class ServiceFly {
 
             if (entry.getKey().equals(code) ) {
                 if (entry.getValue().isAvailable()) {
-                    System.out.println("you have reservation for " + entry.getKey() + "fly");
+                    System.out.println("YOU HAE RESERVED " + entry.getKey() + " FLY");
                     entry.getValue().setAvailable(false);
                     ss = false;
-                    break;
                 } else {
                     System.out.println("THAT FLY IS NO AVAILABLE");
-                    break;
                 }
+                break;
             }
         }
         if (ss) {
             System.out.println(" THE CODE YOU WROTE IS NOT ON THE FLY LIST");
-            System.out.println("|||||||||||||||||||||||||||||||||||||||||||||");
+            System.out.println("||||||||||||||||||||||||||||||||||||||||||");
         }
     }
 

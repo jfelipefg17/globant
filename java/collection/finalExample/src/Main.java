@@ -12,13 +12,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        //
         Scanner num = new Scanner(System.in);
 
         ServiceUser user = new ServiceUser();
         ServiceFly fly = new ServiceFly();
 
         boolean ss = true;
+        boolean ss2 = true;
         int opt;
+        int opt2;
 
 
         do {
@@ -59,9 +62,9 @@ public class Main {
             System.out.println("4. delete a fly");
             System.out.println("=================");
             System.out.println("5. exit");
-            opt = num.nextInt();
+            opt2 = num.nextInt();
 
-            switch (opt) {
+            switch (opt2) {
                 case 1:
                     fly.createFly();
                     break;
@@ -74,11 +77,11 @@ public class Main {
                 case 4:
                     fly.deleteFly();
                 case 5:
-                    ss = false;
+                    ss2 = false;
                 default:
                     System.out.println("wrong answer");
                     System.out.println("==================");
             }
-        }while (ss);
+        }while (ss2);
     }
 }

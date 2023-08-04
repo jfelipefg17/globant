@@ -18,5 +18,8 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="calculator" />
+    <orderEntry type="module" module-name="Temperature" />
+    <orderEntry type="module" module-name="TaskManager" />
   </component>
 </module>
