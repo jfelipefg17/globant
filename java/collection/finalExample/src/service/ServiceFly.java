@@ -14,22 +14,41 @@ public class ServiceFly {
 
     HashMap<String, Fly> flyList = new HashMap<>();
 
+    public void before () {
+        flyList.put("AAD512", new Fly("AAD512",23456,true,LocalDate.of(2023,10,28),LocalTime.of(2,35)));
+        flyList.put("ZZU098", new Fly("ZZU098",15432,true,LocalDate.of(2023,6,10),LocalTime.of(3,50)));
+        flyList.put("JFG432", new Fly("JFG432",87644,true,LocalDate.of(2023,4,8),LocalTime.of(6,5)));
+    }
     public void createFly () {
 
         LocalDate date;
         LocalTime duration;
 
+        System.out.println();
         System.out.println("write code of the fly EXAMPLE (AAA512) ");
         System.out.println("==================");
         String code = read.nextLine();
-        int id = random.nextInt(10000 - 99999);
+        int min = 10000;
+        int max = 99999;
+        int id = random.nextInt(max - min + 1);
         boolean ava = true;
-        System.out.println("write date of the fly (MM/DD) ");
+        System.out.println("||||||| Date of the fly |||||||");
+        System.out.println("write mount of the fly (01-12) ");
         System.out.println("==================");
-        date = LocalDate.parse(read.nextLine());
-        System.out.println("write duration of the fly (HH/MM) ");
+        int m = num.nextInt();
+        System.out.println("write day of the fly (01-12) ");
         System.out.println("==================");
-        duration = LocalTime.parse(read.nextLine());
+        int d = num.nextInt();
+        int y = LocalDate.now().getYear();
+        date = LocalDate.of(y,m,d);
+        System.out.println("||||| Duration of the fly |||||");
+        System.out.println("write mount of the fly (0-24) ");
+        System.out.println("==================");
+        int h = num.nextInt();
+        System.out.println("write day of the fly (0-60) ");
+        System.out.println("==================");
+        int mi= num.nextInt();
+        duration = LocalTime.of(h,mi);
         flyList.put(code,new Fly(code,id,ava,date,duration));
 
         System.out.println("YOU ADD A NEW FLY");
@@ -39,6 +58,7 @@ public class ServiceFly {
     public void showFly () {
 
         for ( Map.Entry<String,Fly> entry : flyList.entrySet()) {
+            System.out.println();
             System.out.println("code fly" + entry.getKey() + "fly: " + entry.getValue());
         }
 
@@ -49,7 +69,9 @@ public class ServiceFly {
         boolean ss = true;
 
         showFly();
+
         System.out.println("|||||||||||||||||||||||||||||||||||||||||||||");
+        System.out.println();
         System.out.println("write the code of the fly u want to reserve");
         String code = read.nextLine();
 
@@ -77,7 +99,9 @@ public class ServiceFly {
         boolean ss = true;
 
         showFly();
+
         System.out.println("|||||||||||||||||||||||||||||||||||||||||||||");
+        System.out.println();
         System.out.println("write the code of the fly u want to delete");
         String code = read.nextLine();
 

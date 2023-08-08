@@ -48,10 +48,15 @@ public class Main {
             // TODO see if i can use again ss boolean or if i have to use another variable
         }while (ss);
 
-        System.out.println("||||||||||||||||||||||||||||||||||||||||||||||||||||||");
-        System.out.println("||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+        fly.before();
+
 
         do {
+            System.out.println();
+            System.out.println();
+            System.out.println();
+            System.out.println("||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+            System.out.println("||||||||||||||||||||||||||||||||||||||||||||||||||||||");
             System.out.println("WELCOME TO THE MENU");
             System.out.println("1. create a fly");
             System.out.println("=================");
@@ -76,8 +81,10 @@ public class Main {
                     break;
                 case 4:
                     fly.deleteFly();
+                    break;
                 case 5:
                     ss2 = false;
+                    break;
                 default:
                     System.out.println("wrong answer");
                     System.out.println("==================");
