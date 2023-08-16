@@ -1,9 +1,10 @@
 package entities;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Game {
-    private ArrayList<Player> playerList = new ArrayList<>();
+    private  Player [] ArrayP;
     private Gun gun;
 
 
@@ -11,17 +12,17 @@ public class Game {
 
     }
 
-    public Game(ArrayList<Player> playerList, Gun gun) {
-        this.playerList = playerList;
+    public Game(Player [] ArrayP, Gun gun) {
+        this.ArrayP = ArrayP;
         this.gun = gun;
     }
 
-    public ArrayList<Player> getPlayerList() {
-        return playerList;
+    public Player [] getArrayP() {
+        return ArrayP;
     }
 
-    public void setPlayerList(ArrayList<Player> playerList) {
-        this.playerList = playerList;
+    public void setArrayP(Player [] ArrayP) {
+        this.ArrayP = ArrayP;
     }
 
     public Gun getGun() {
@@ -35,7 +36,7 @@ public class Game {
     @Override
     public String toString() {
         return "Game{" +
-                "playerList=" + playerList +
+                "playerList=" + ArrayP +
                 ", gun=" + gun +
                 '}';
     }

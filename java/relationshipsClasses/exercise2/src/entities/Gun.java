@@ -1,9 +1,9 @@
 package entities;
 
-import java.util.Arrays;
 
 public class Gun {
     private int actualP;
+    private int actualPP;
     private int waterP;
 
 
@@ -11,8 +11,9 @@ public class Gun {
 
     }
 
-    public Gun(int actualP, int waterP) {
+    public Gun(int actualP, int waterP,int actualPP) {
         this.actualP = actualP;
+        this.actualPP = actualPP;
         this.waterP = waterP;
     }
 
@@ -22,6 +23,14 @@ public class Gun {
 
     public void setActualP(int actualP) {
         this.actualP = actualP;
+    }
+
+    public int getActualPP() {
+        return actualPP;
+    }
+
+    public void setActualPP(int actualPP) {
+        this.actualPP = actualPP;
     }
 
     public int getWaterP() {
@@ -35,7 +44,8 @@ public class Gun {
     @Override
     public String toString() {
         return "Gun{" +
-                ", actualP=" + actualP +
+                "actualP=" + actualP +
+                ", actualPP=" + actualPP +
                 ", waterP=" + waterP +
                 '}';
     }

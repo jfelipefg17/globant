@@ -1,16 +1,26 @@
 package service;
 
+import entities.Game;
 import entities.Gun;
+import entities.Player;
+
+import java.util.ArrayList;
 
 public class PlayerService {
 
-    GunService gs1 = new GunService();
 
-    public void shot (Gun gun) {
+    public boolean shot (Gun gun, GunService gs1, Game g1) {
+
         boolean ss = gs1.wed(gun);
 
-        if (ss == true) {
 
+        if (ss) {
+            return true;
+        } else {
+
+            return false;
         }
     }
+
+
 }
