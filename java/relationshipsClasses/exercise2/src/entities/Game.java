@@ -5,9 +5,7 @@ public class Game {
     private  Player [] ArrayP;
     private Gun gun;
 
-
     public  Game() {
-
     }
 
     public Game(Player [] ArrayP, Gun gun) {

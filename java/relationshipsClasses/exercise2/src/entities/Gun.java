@@ -1,6 +1,5 @@
 package entities;
 
-
 public class Gun {
     private int actualP;
     private int actualPP;
@@ -8,7 +7,6 @@ public class Gun {
 
 
     public Gun () {
-
     }
 
     public Gun(int actualP, int waterP,int actualPP) {

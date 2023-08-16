@@ -4,12 +4,9 @@ import entities.Game;
 import entities.Gun;
 import entities.Player;
 
-
 import java.util.Random;
 
 public class GunService {
-
-
 
     public void randomPosition (Gun gun, Game g1) {
 
@@ -21,17 +18,17 @@ public class GunService {
         gun.setActualPP(0);
     }
 
+
     public boolean wed (Gun gun) {
 
         return gun.getWaterP() == gun.getActualP();
     }
 
+
     public void nextShot (Gun gun, Game g1) {
 
         Player [] ArrayP = g1.getArrayP();
 
-        System.out.println(gun.getActualPP());
-        System.out.println(ArrayP.length);
         if (gun.getActualPP() > ArrayP.length) {
             gun.setActualPP(0);
         } else {
@@ -50,6 +47,4 @@ public class GunService {
         System.out.println(gun.toString());
 
     }
-
-
 }

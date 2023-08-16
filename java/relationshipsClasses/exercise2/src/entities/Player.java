@@ -1,7 +1,5 @@
 package entities;
 
-
-
 public class Player {
     private int id;
     private String userID;
