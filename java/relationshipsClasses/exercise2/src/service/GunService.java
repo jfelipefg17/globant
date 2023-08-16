@@ -38,7 +38,7 @@ public class GunService {
             gun.setActualPP(gun.getActualPP() + 1);
         }
 
-        if (gun.getActualP() > 6) {
+        if (gun.getActualP() >= 6) {
             gun.setActualP(1);
         } else {
             gun.setActualP(gun.getActualP() + 1);
@@ -47,7 +47,8 @@ public class GunService {
     }
 
     public void print (Gun gun) {
-        gun.toString();
+        System.out.println(gun.toString());
+
     }
 
 

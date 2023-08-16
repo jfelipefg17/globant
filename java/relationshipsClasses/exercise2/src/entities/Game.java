@@ -1,7 +1,5 @@
 package entities;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
 public class Game {
     private  Player [] ArrayP;
@@ -36,7 +34,7 @@ public class Game {
     @Override
     public String toString() {
         return "Game{" +
-                "playerList=" + ArrayP +
+                "Array=" + ArrayP +
                 ", gun=" + gun +
                 '}';
     }
