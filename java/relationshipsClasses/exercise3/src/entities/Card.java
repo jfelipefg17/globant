@@ -1,10 +1,10 @@
 package entities;
 
-public class Cart {
+public class Card {
     private int number;
     private String type;
 
-    public Cart(int number, String type) {
+    public Card(int number, String type) {
         this.number = number;
         this.type = type;
     }

@@ -1,51 +1,53 @@
 package service;
 
-import entities.Cart;
+import entities.Card;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class ServiceDeck {
 
-    HashMap<Integer, Cart> deckCarts = new HashMap<>();
+    ArrayList<Card> deckCards = new ArrayList<>();
+    ArrayList<Card> deck = new ArrayList<>();
 
-    public HashMap createDeck () {
-
-        int aux = 0;
-
-        for (int i = 1; i <= 12; i++) {
-            if (i != 8 && i !=9) {
-                aux ++;
-                deckCarts.put(aux, new Cart(i, "espadas"));
+    public void createDeck () {
+        String[] palos = {"espadas", "bastos", "oros", "copas"};
+        for (String palo : palos) {
+            for (int numero = 1; numero <= 12; numero++) {
+                if (numero != 8 && numero != 9) {
+                    deckCards.add(new Card(numero, palo));
+                }
             }
         }
-        aux = 0;
-        for (int h = 1; h <= 12; h++) {
-            if (h != 8 && h !=9) {
-                aux ++;
-                deckCarts.put(aux+10, new Cart(h, "bastos"));;
-            }
-        }
-        aux = 0;
-        for (int s = 1; s <= 12; s++) {
-            if (s != 8 && s !=9) {
-                aux ++;
-                deckCarts.put(aux+20, new Cart(s, "copas"));
-            }
-        }
-        aux = 0;
-        for (int n = 1; n <= 12; n++) {
-            if (n != 8 && n !=9) {
-                aux ++;
-                deckCarts.put(aux+30, new Cart(n, "oros"));
-            }
-        }
-        return deckCarts;
     }
 
     public void printDeck() {
-        for ( Map.Entry<Integer, Cart> entry : deckCarts.entrySet() ) {
-            System.out.println(entry.getKey() + " / " + entry.getValue());
+        for ( Card carta : deckCards ) {
+            System.out.println(carta.getNumber() + " / " + carta.getType());
+        }
+    }
+
+    public void shuffle () {
+        Collections.shuffle(deckCards);
+    }
+
+    public ArrayList giveCard (int n) {
+
+        if (n < deckCards.size()) {
+            for ( int i = 0; i < n; i++ ) {
+                deck.add(deckCards.get(i)) ;
+                deckCards.remove(i);
+            }
+            return deck;
+        } else {
+            return null;
+        }
+
+    }
+
+    public void printDeckR() {
+        for ( Card carta : deck ) {
+            System.out.println(carta.getNumber() + " / " + carta.getType());
         }
     }
 
