@@ -37,5 +37,8 @@
     <orderEntry type="module" module-name="calculator" />
     <orderEntry type="module" module-name="dateValidator" />
     <orderEntry type="module" module-name="TaskManager" />
+    <orderEntry type="module" module-name="TaskManager" />
+    <orderEntry type="module" module-name="calculator" />
+    <orderEntry type="module" module-name="dateValidator" />
   </component>
 </module>

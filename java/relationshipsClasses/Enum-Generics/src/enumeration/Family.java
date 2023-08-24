@@ -6,7 +6,7 @@ public enum Family {
     private int age;
     private String name;
 
-    private Family(int age, String name) {
+    Family(int age, String name) {
         this.age = age;
         this.name = name;
     }
@@ -17,5 +17,13 @@ public enum Family {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return "Family{" +
+                "age=" + age +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

@@ -38,7 +38,7 @@ public class Main {
 
         // both at  the same time (race and family)
 
-        Dog d3 = new Dog<>("pepe", RaceType.BOSTON, Family.PAPA);
+        Dog d3 = new Dog<>("pepe", RaceType.BOSTON, Family.PAPA.getName());
 
         System.out.println(d3.toString());
     }
