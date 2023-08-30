@@ -13,7 +13,8 @@ public abstract class Animals {
         this.raza = raza;
     }
 
-    // TODO protected or public
+    // real use with protected
     public void printFood () {
+
     }
 }
