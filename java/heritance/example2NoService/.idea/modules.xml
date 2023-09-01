@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../relationshipsClasses/Enum-Generics/Enum-Generics.iml" filepath="$PROJECT_DIR$/../../relationshipsClasses/Enum-Generics/Enum-Generics.iml" />
       <module fileurl="file://$PROJECT_DIR$/example2NoService.iml" filepath="$PROJECT_DIR$/example2NoService.iml" />
       <module fileurl="file://$PROJECT_DIR$/../example2Services/example2Services.iml" filepath="$PROJECT_DIR$/../example2Services/example2Services.iml" />
       <module fileurl="file://$PROJECT_DIR$/../example4/example4.iml" filepath="$PROJECT_DIR$/../example4/example4.iml" />
