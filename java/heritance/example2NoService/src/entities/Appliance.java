@@ -74,13 +74,13 @@ public abstract class Appliance {
         return false;
     }
 
-    public double finalPrice (String energy, double weight) {
+    public void finalPrice (WashingMachine s1) {
         double finalPrice;
 
         double num1 = 0;
         double num2 = 0;
 
-        switch (energy) {
+        switch (s1.energy) {
             case "A":
                 num1 = 1000;
                 break;
@@ -103,19 +103,18 @@ public abstract class Appliance {
                 System.out.println("wrong letter energy");
         }
 
-        if (weight <= 20 && weight >= 1) {
+        if (s1.weight <= 20 && s1.weight >= 1) {
             num2 = 100;
-        } else if (weight > 20 && weight <=49) {
+        } else if (s1.weight > 20 && s1.weight <=49) {
             num2 = 500;
-        } else if (weight >49 && weight <= 79) {
+        } else if (s1.weight >49 && s1.weight <= 79) {
             num2 = 800;
-        } else if (weight > 79 ) {
+        } else if (s1.weight > 79 ) {
             num2 = 1000;
         }
 
         finalPrice = num1 + num2;
-
-        return finalPrice;
+        setPrice(finalPrice);
     }
 
     public void createAppliance () {
@@ -141,7 +140,7 @@ public abstract class Appliance {
         System.out.println("====================");
         System.out.println("weight of the appliance");
         weight = num.nextDouble();
-        price = finalPrice(energy,weight);
+        ;
 
         //return new Appliance(price,color,energy,weight);
     }

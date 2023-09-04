@@ -32,5 +32,23 @@ public class WashingMachine extends Appliance{
         new WashingMachine(super.price,super.color,super.energy,super.weight,load);
     }
 
-    // implement final price inheritance method
+
+    @Override
+    public void finalPrice(WashingMachine w1) {
+        super.finalPrice(w1);
+        if (w1.load > 30) {
+            w1.price = w1.getPrice() + 500;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "WashingMachine{" +
+                "load=" + load +
+                ", price=" + price +
+                ", color='" + color + '\'' +
+                ", energy='" + energy + '\'' +
+                ", weight=" + weight + " kg" +
+                '}';
+    }
 }
