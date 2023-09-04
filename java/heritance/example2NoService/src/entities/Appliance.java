@@ -74,7 +74,7 @@ public abstract class Appliance {
         return false;
     }
 
-    public void finalPrice (WashingMachine s1) {
+    public void finalPrice (Appliance s1) {
         double finalPrice;
 
         double num1 = 0;

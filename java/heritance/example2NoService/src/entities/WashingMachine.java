@@ -26,6 +26,7 @@ public class WashingMachine extends Appliance{
 
     public void createWashingMachine () {
         super.createAppliance();
+        System.out.println("==============");
         System.out.println("write the load ");
         load = read.nextDouble();
 
@@ -34,9 +35,9 @@ public class WashingMachine extends Appliance{
 
 
     @Override
-    public void finalPrice(WashingMachine w1) {
+    public void finalPrice(Appliance w1) {
         super.finalPrice(w1);
-        if (w1.load > 30) {
+        if (load > 30) {
             w1.price = w1.getPrice() + 500;
         }
     }
