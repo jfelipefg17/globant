@@ -71,4 +71,15 @@ public class Rent {
         this.boat = boat;
     }
 
+    @Override
+    public String toString() {
+        return "Rent{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                ", start=" + start +
+                ", finish=" + finish +
+                ", position=" + position +
+                ", boat=" + boat +
+                '}';
+    }
 }

@@ -10,6 +10,8 @@ public abstract class Boat {
     public Boat () {
 
     }
+
+
     public Boat(String enrolled, int length, int year) {
         this.enrolled = enrolled;
         this.length = length;
@@ -45,11 +47,14 @@ public abstract class Boat {
 
     public void creatBoat () {
         System.out.println("================");
-        System.out.println();
+        System.out.println("enrolled");
+        enrolled = read.nextLine();
         System.out.println("================");
-        System.out.println();
+        System.out.println("length in mt");
+        length = num.nextInt();
         System.out.println("================");
-        System.out.println();
+        System.out.println("year");
+        year = num.nextInt();
         System.out.println("================");
 
     }

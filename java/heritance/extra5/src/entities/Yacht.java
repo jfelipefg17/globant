@@ -4,9 +4,11 @@ public class Yacht extends Boat{
     protected int powerHP;
     protected int cabins;
 
-    public Yacht(String enrolled, int length, int year, int powerHP) {
+
+    public Yacht(String enrolled, int length, int year, int powerHP, int cabins) {
         super(enrolled, length, year);
         this.powerHP = powerHP;
+        this.cabins = cabins;
     }
 
     public int getPowerHP() {
@@ -33,6 +35,8 @@ public class Yacht extends Boat{
                 ", enrolled='" + enrolled + '\'' +
                 ", length=" + length +
                 ", year=" + year +
+                ", num=" + num +
+                ", read=" + read +
                 '}';
     }
 }
