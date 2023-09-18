@@ -3,11 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/example1/example1.iml" filepath="$PROJECT_DIR$/example1/example1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../example1/example11.iml" filepath="$PROJECT_DIR$/../example1/example11.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../example2/example2.iml" filepath="$PROJECT_DIR$/../example2/example2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../example3/example3.iml" filepath="$PROJECT_DIR$/../example3/example3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../example4/example4.iml" filepath="$PROJECT_DIR$/../example4/example4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/handleExcep.iml" filepath="$PROJECT_DIR$/handleExcep.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../example1/example12.iml" filepath="$PROJECT_DIR$/../example1/example12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../example2/example21.iml" filepath="$PROJECT_DIR$/../example2/example21.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../example3/example31.iml" filepath="$PROJECT_DIR$/../example3/example31.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../example4/example41.iml" filepath="$PROJECT_DIR$/../example4/example41.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../example5/example5.iml" filepath="$PROJECT_DIR$/../example5/example5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/handleExcep1.iml" filepath="$PROJECT_DIR$/handleExcep1.iml" />
     </modules>
   </component>
 </project>
