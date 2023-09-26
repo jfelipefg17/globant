@@ -2,7 +2,7 @@ import entities.People;
 import exception.IsAdultException;
 import services.PeopleService;
 
-public class Main {
+public class main {
 
     public static void main(String[] args) {
 
@@ -15,8 +15,8 @@ public class Main {
 
         try {
 
-            s1.isAdult(p1);
-            System.out.println(p1.toString());
+            s1.isAdult(p3);
+            System.out.println(p3.toString());
 
 
         }catch (IsAdultException a) {
@@ -29,7 +29,5 @@ public class Main {
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
-
-
     }
 }
