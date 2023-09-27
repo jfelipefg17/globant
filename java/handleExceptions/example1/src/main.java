@@ -13,7 +13,7 @@ public class main {
         PeopleService s1 = new PeopleService();
 
 
-        try {
+        try { 
 
             s1.isAdult(p3);
             System.out.println(p3.toString());
