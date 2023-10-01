@@ -7,7 +7,8 @@ public class main {
     public static void main(String[] args) {
 
         People p1 = null;
-        People p2 = new People("felipe",19,1001445250);
+        People p2 = new People(
+                "felipe",19,1001445250);
         People p3 = new People("felipe",18,1001445250);
 
         PeopleService s1 = new PeopleService();
