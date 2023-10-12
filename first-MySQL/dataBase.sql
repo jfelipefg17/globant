@@ -21,9 +21,12 @@ CREATE TABLE `jdbc`.`students2` (
 INSERT INTO students VALUES(1,'felipe',30);
 INSERT INTO students VALUES(2,'andrea',20);
 INSERT INTO students VALUES(3,'pedro',50);
+INSERT INTO students VALUES(4,'pedro',50);
+INSERT INTO students VALUES(5,'pedro',50);
 
 INSERT INTO students2 VALUES(1,'felipe',30);
 INSERT INTO students2 VALUES(2,'oscar',20);
 INSERT INTO students2 VALUES(3,'andres',56);
 
 SELECT * FROM STUDENTS;
+
