@@ -32,7 +32,7 @@ public final class ProductDAO extends DAO {
 
     }
 
-    public void modifyProduct (Product p1) throws Exception {
+    public void modifyProduct (Product p1, int code) throws Exception {
 
         try {
             if (p1 == null) {
@@ -40,9 +40,11 @@ public final class ProductDAO extends DAO {
             }
 
             // todo: modify query
-            String sql = "INSERT INTO productos (id, name, price, idManuf)" + "VALUES ('" + p1.getIdProd() + "' , '" + p1.getName() + "' , '" + p1.getPrice() + "' , '" + p1.getManuf().getIdManuf() + "' ); ";
+            String sql = "UPDATE producto SET nombre = '" + p1.getName() + "', precio = " + p1.getPrice() + ", codigo_fabricante = " + p1.getManuf().getIdManuf() + " WHERE codigo = " + code;
 
             cudDB(sql);
+
+
 
         }catch (Exception e) {
             throw e;

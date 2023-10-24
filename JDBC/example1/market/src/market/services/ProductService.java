@@ -20,9 +20,11 @@ public class ProductService {
 
         Scanner read = new Scanner(System.in);
         Scanner dou = new Scanner(System.in);
+        Scanner num = new Scanner(System.in);
 
         Product product = new Product();
-        Manufacturer manufacturer = new Manufacturer();
+        Manufacturer manufacture;
+        ManufacturerService manufacturerService = new ManufacturerService();
 
         System.out.println("=============");
         System.out.println("write name of yout product");
@@ -31,9 +33,18 @@ public class ProductService {
         System.out.println("write price of the product");
         double price = dou.nextDouble();
         System.out.println("=============");
-        System.out.println("");
+        manufacturerService.printAllManufacturer();
+        System.out.println("write the id manufacturer of the product");
+        int idmanuf = num.nextInt();
         System.out.println("=============");
+        System.out.println("writhe the name manufacturer of the product ");
+        String namemanuf = read.nextLine();
 
+         manufacture = new Manufacturer(idmanuf,namemanuf);
+
+        product.setName(name);
+        product.setPrice(price);
+        product.setIdManuf(manufacture);
 
         try {
 
@@ -47,29 +58,17 @@ public class ProductService {
         }
     }
 
-    public void searchAllProducts() throws Exception {
+    public Collection<Product> searchAllProducts() throws Exception {
 
-        try {
+      Collection<Product> products;
+      try {
 
-            Collection<Product> products = dao.searchAllProducts();
+        products = dao.searchAllProducts();
 
-            if (products != null && !products.isEmpty()) {
-                for (Product product : products) {
-
-                    System.out.println("Codigo: " + product.getIdProd());
-                    System.out.println("Nombre: " + product.getName());
-                    System.out.println("Precio: " + product.getPrice());
-                    System.out.println("Fabricante: " + product.getManuf());
-
-                    System.out.println("======================");
-                }
-            } else {
-                System.out.println("No se encontraron productos.");
-            }
-        } catch (Exception e) {
-            throw (e);
-        }
-
+      } catch (Exception e) {
+        throw (e);
+      }
+      return products;
     }
 
 
@@ -184,4 +183,75 @@ public class ProductService {
 
     }
 
+    public void printAllProducts() throws Exception {
+
+        try {
+
+            Collection<Product> products = dao.searchAllProducts();
+
+            if (products != null && !products.isEmpty()) {
+                for (Product product : products) {
+
+
+                    System.out.println("Codigo: " + product.getIdProd());
+                    System.out.println("Nombre: " + product.getName());
+                    System.out.println("Precio: " + product.getPrice());
+                    System.out.println("Fabricante: " + product.getManuf());
+
+                    System.out.println("======================");
+                }
+            } else {
+                System.out.println("No se encontraron productos.");
+            }
+        } catch (Exception e) {
+            throw (e);
+        }
+
+    }
+
+    public void editproduct() throws Exception {
+
+
+        System.out.println("write the codigo of the product you want modify");
+
+        Scanner read = new Scanner(System.in);
+        Scanner dou = new Scanner(System.in);
+        Scanner num = new Scanner(System.in);
+
+        Product product = new Product();
+        Manufacturer manufacture;
+        ManufacturerService manufacturerService = new ManufacturerService();
+        ProductService productService = new ProductService();
+
+        productService.printAllProducts();
+        System.out.println("write the codigo of the product you want modify");
+        int code = num.nextInt();
+
+        System.out.println("=============");
+        System.out.println("write name of yout product");
+        String name = read.nextLine();
+        System.out.println("=============");
+        System.out.println("write price of the product");
+        double price = dou.nextDouble();
+        System.out.println("=============");
+        manufacturerService.printAllManufacturer();
+        System.out.println("write the id manufacturer of the product");
+        int idmanuf = num.nextInt();
+        System.out.println("=============");
+        System.out.println("writhe the name manufacturer of the product ");
+        String namemanuf = read.nextLine();
+
+        manufacture = new Manufacturer(idmanuf,namemanuf);
+
+        product.setName(name);
+        product.setPrice(price);
+        product.setIdManuf(manufacture);
+        try {
+
+            dao.modifyProduct(product,code);
+
+        }catch (Exception e){
+            throw e;
+        }
+    }
 }

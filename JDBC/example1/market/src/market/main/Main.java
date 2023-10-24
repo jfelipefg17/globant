@@ -9,12 +9,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws Exception {
 
-//       Product product = new Product(13,"paleta",5000,new Manufacturer(1, "Asus"));
-//
-//        ProductService productService = new ProductService();
-////
-////       productService.creatProduct(product)
-
         boolean ss = true;
         int opt;
         Scanner read = new Scanner(System.in);
@@ -66,7 +60,7 @@ public class Main {
                     manufacturerService.creatManufacturer();
                     break;
                 case 8:
-                    //productService.
+                    productService.editproduct();
                     break;
                 case 9:
                     ss = false;
