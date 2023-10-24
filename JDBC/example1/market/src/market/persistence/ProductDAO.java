@@ -11,7 +11,7 @@ public final class ProductDAO extends DAO {
 
     private final ManufacturerService manufacturerService;
 
-    public ProductDAO() {
+        public ProductDAO() {
         this.manufacturerService = new ManufacturerService();
     }
 
@@ -98,6 +98,35 @@ public final class ProductDAO extends DAO {
     public Collection<Product> searchAllProducts() throws Exception{
         try {
 
+            String sql = "SELECT * FROM producto ";
+            rDB(sql);
+
+            Product product;
+            Collection<Product> products = new ArrayList<>();
+            while (result.next()){
+
+                product = new Product();
+
+                product.setIdProd(result.getInt("codigo"));
+                product.setName(result.getString("nombre"));
+                product.setPrice(result.getDouble("precio"));
+                Integer idManufacture = result.getInt("codigo_fabricante");
+                Manufacturer manufacturer = manufacturerService.searchManufacturerById(idManufacture);
+                product.setIdManuf(manufacturer);
+                products.add(product);
+            }
+            disconnectDB();
+            return products;
+
+        } catch (Exception e) {
+            disconnectDB();
+            throw e;
+        }
+    }
+
+    public Collection<Product> searchNameProducts() throws Exception{
+        try {
+
             String sql = "SELECT nombre FROM producto ";
             rDB(sql);
 
@@ -113,6 +142,35 @@ public final class ProductDAO extends DAO {
                 //Integer idManufacture = result.getInt("codigo_fabricante");
                 //Manufacturer manufacturer = manufacturerService.searchManufacturerById(idManufacture);
                 //product.setIdManuf(manufacturer);
+                //products.add(product);
+            }
+            disconnectDB();
+            return products;
+
+        } catch (Exception e) {
+            disconnectDB();
+            throw e;
+        }
+    }
+
+    public Collection<Product> searchNamePriceProducts() throws Exception{
+        try {
+
+            String sql = "SELECT nombre, precio FROM producto ";
+            rDB(sql);
+
+            Product product;
+            Collection<Product> products = new ArrayList<>();
+            while (result.next()){
+
+                product = new Product();
+
+                //product.setIdProd(result.getInt("codigo"));
+                product.setName(result.getString("nombre"));
+                product.setPrice(result.getDouble("precio"));
+                //Integer idManufacture = result.getInt("codigo_fabricante");
+                //Manufacturer manufacturer = manufacturerService.searchManufacturerById(idManufacture);
+                //product.setIdManuf(manufacturer);
                 products.add(product);
             }
             disconnectDB();
@@ -122,6 +180,34 @@ public final class ProductDAO extends DAO {
             disconnectDB();
             throw e;
         }
+    }
+
+    public Product lowestPrice () throws Exception {
+            try {
+
+                String sql = "";
+                rDB(sql);
+
+                Product product = null;
+                while (result.next()){
+
+                    product = new Product();
+
+                    product.setIdProd(result.getInt("codigo"));
+                    product.setName(result.getString("nombre"));
+                    product.setPrice(result.getDouble("precio"));
+                    Integer idManufacture = result.getInt("codigo_fabricante");
+                    Manufacturer manufacturer = manufacturerService.searchManufacturerById(idManufacture);
+                    product.setIdManuf(manufacturer);
+                }
+                disconnectDB();
+                return product;
+
+            } catch (Exception e) {
+                disconnectDB();
+                throw e;
+            }
+
     }
 
 }
