@@ -11,7 +11,7 @@ public class Book {
   @Id
   @GeneratedValue(generator = "uuid")
   @GenericGenerator(name = "uuid", strategy = "uuid2")
-  private Long isbn;
+  private String isbn;
   private String tittle;
   private Integer numberBooks;
   @Temporal(TemporalType.DATE)
@@ -26,7 +26,7 @@ public class Book {
   public Book() {
   }
 
-  public Book(Long isbn, String tittle, Integer numberBooks, Date entryDate, Author author, Publisher publisher) {
+  public Book(String isbn, String tittle, Integer numberBooks, Date entryDate, Author author, Publisher publisher) {
     this.isbn = isbn;
     this.tittle = tittle;
     this.numberBooks = numberBooks;
@@ -35,11 +35,11 @@ public class Book {
     this.publisher = publisher;
   }
 
-  public Long getIsbn() {
+  public String getIsbn() {
     return isbn;
   }
 
-  public void setIsbn(Long isbn) {
+  public void setIsbn(String isbn) {
     this.isbn = isbn;
   }
 

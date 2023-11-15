@@ -1,6 +1,7 @@
 package com.Globant.library.services;
 
 import com.Globant.library.entities.Author;
+import com.Globant.library.exceptions.MyExceptions;
 import com.Globant.library.repositories.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AuthorService {
@@ -15,7 +17,10 @@ public class AuthorService {
   @Autowired
   private AuthorRepository authorRepository;
   @Transactional
-  public void creatAuthor (String name) {
+  public void creatAuthor (String name) throws MyExceptions{
+
+    validator( name);
+
 
     Author author = new Author();
 
@@ -31,5 +36,29 @@ public class AuthorService {
     authorList = authorRepository.findAll();
 
     return authorList;
+  }
+
+  public void modifyAuthor(String id, String name) throws MyExceptions{
+
+    validator(name);
+
+
+    Optional<Author> anw = authorRepository.findById(id);
+
+    if (anw.isPresent()){
+
+      Author author = anw.get();
+
+      author.setName(name);
+
+      authorRepository.save(author);
+    }
+  }
+
+  private void validator( String name) throws MyExceptions{
+
+    if (name == null || name.isEmpty()) {
+      throw new MyExceptions("the name cant be null or empty");
+    }
   }
 }

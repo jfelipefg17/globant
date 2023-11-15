@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface BookRepository extends JpaRepository<Book, Long> {
+public interface BookRepository extends JpaRepository<Book, String> {
 
   @Query("SELECT L FROM Book L WHERE L.tittle = :tittle")
   public Book searchBookByTittle(@Param("tittle") String tittle);
