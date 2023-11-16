@@ -9,9 +9,7 @@ import java.util.Date;
 public class Book {
 
   @Id
-  @GeneratedValue(generator = "uuid")
-  @GenericGenerator(name = "uuid", strategy = "uuid2")
-  private String isbn;
+  private Long isbn;
   private String tittle;
   private Integer numberBooks;
   @Temporal(TemporalType.DATE)
@@ -26,7 +24,7 @@ public class Book {
   public Book() {
   }
 
-  public Book(String isbn, String tittle, Integer numberBooks, Date entryDate, Author author, Publisher publisher) {
+  public Book(Long isbn, String tittle, Integer numberBooks, Date entryDate, Author author, Publisher publisher) {
     this.isbn = isbn;
     this.tittle = tittle;
     this.numberBooks = numberBooks;
@@ -35,11 +33,11 @@ public class Book {
     this.publisher = publisher;
   }
 
-  public String getIsbn() {
+  public Long getIsbn() {
     return isbn;
   }
 
-  public void setIsbn(String isbn) {
+  public void setIsbn(Long isbn) {
     this.isbn = isbn;
   }
 

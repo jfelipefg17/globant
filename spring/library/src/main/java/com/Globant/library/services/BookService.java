@@ -27,7 +27,7 @@ public class BookService {
   private PublisherRepository publisherRepository;
 
   @Transactional
-  public void createBook(String isbn, String tittle, Integer numberBooks, String idAuthor, String idPublisher) throws MyExceptions {
+  public void createBook(Long isbn, String tittle, Integer numberBooks, String idAuthor, String idPublisher) throws MyExceptions {
 
     validator(isbn, tittle, numberBooks, idAuthor, idPublisher);
 
@@ -55,7 +55,7 @@ public class BookService {
     return bookList;
   }
 
-  public void modifyBook (String isbn, String tittle, Integer numberBooks, String idAuthor, String idPublisher) throws MyExceptions{
+  public void modifyBook (Long isbn, String tittle, Integer numberBooks, String idAuthor, String idPublisher) throws MyExceptions{
 
     validator(isbn, tittle, numberBooks, idAuthor, idPublisher);
 
@@ -92,9 +92,9 @@ public class BookService {
     }
   }
 
-  private void validator (String isbn, String tittle, Integer numberBooks, String idAuthor, String idPublisher) throws MyExceptions {
-    if (isbn == null || isbn.isEmpty()) {
-      throw new MyExceptions("The isbn cant be null or empty");
+  private void validator (Long isbn, String tittle, Integer numberBooks, String idAuthor, String idPublisher) throws MyExceptions {
+    if (isbn.equals(null) ) {
+      throw new MyExceptions("The isbn cant be null");
     }
 
     if (tittle == null || tittle.isEmpty()) {
