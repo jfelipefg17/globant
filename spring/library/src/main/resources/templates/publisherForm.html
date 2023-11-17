@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,22 @@
 
     <button type="submit" class="btn btn-primary">Send</button>
   </form>
+</div>
+<!--handle errors-->
+
+<div th:if="${Error != null}" class="card text-white bg-danger mb-3 messageError">
+  <div class="card-body">
+    <h5 class="card-tittle">! ERROR !</h5>
+    <p class="card-text" th:text="${Error}" ></p>
+  </div>
+
+</div>
+
+<div th:if="${Good != null}" class="card text-white bg-success mb-3 mt-3 messageGood">
+  <div class="card-body">
+    <h5 class="card-tittle">! ERROR !</h5>
+    <p class="card-text" th:text="${Good}"></p>
+  </div>
 </div>
 
 <main>

@@ -6,6 +6,7 @@ import com.Globant.library.services.BookService;
 import com.Globant.library.services.PublisherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,13 +30,19 @@ public class BookController {
   }
 
   @PostMapping("/registration")
-  public String registration (@RequestParam Long isbn ,@RequestParam String tittle, Integer numberBook, String idAuthor, String idPublisher) {
+  public String registration (@RequestParam(required = false) Long isbn , @RequestParam String tittle, @RequestParam(required = false) Integer numberBook, @RequestParam String idAuthor, @RequestParam String idPublisher, ModelMap model) {
 
     try {
+
       bookService.createBook(isbn,tittle,numberBook,idAuthor,idPublisher);
+      model.put("Good", "The Book was successfully uploaded");
+
     }catch (MyExceptions e){
+
       System.out.println(e.getMessage());
-      return "index.hmtl";
+      model.put("Error", e.getMessage());
+
+      return "bookForm.html";
     }
 
     return "index.html";

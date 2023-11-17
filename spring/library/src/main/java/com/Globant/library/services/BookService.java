@@ -93,7 +93,7 @@ public class BookService {
   }
 
   private void validator (Long isbn, String tittle, Integer numberBooks, String idAuthor, String idPublisher) throws MyExceptions {
-    if (isbn.equals(null) ) {
+    if (isbn == null ) {
       throw new MyExceptions("The isbn cant be null");
     }
 
