@@ -5,11 +5,9 @@ import com.Globant.library.exceptions.MyExceptions;
 import com.Globant.library.services.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,7 +33,7 @@ public class AuthorController {
 
     }catch (MyExceptions e) {
       System.out.println(e.getMessage());
-      model.put("Error", e.getMessage());
+      model.put("error", e.getMessage());
       return "authorForm.html";
     }
 
@@ -44,11 +42,37 @@ public class AuthorController {
   }
 
   @GetMapping("/list")
+  @Transactional
   public String list(ModelMap modelMap) {
     List<Author> authorList = authorService.searchAllAuthor();
 
     modelMap.addAttribute("authors", authorList);
 
     return "authorList.html";
+  }
+
+  @GetMapping("/modify/{id}")
+  @Transactional
+  public String modify(@PathVariable String id, ModelMap modelMap) {
+    modelMap.put("author", authorService.getOne(id));
+
+    return "authorModify.html";
+  }
+
+  @PostMapping("/modify/{id}")
+  @Transactional
+  public String modify(@PathVariable String id, String name, ModelMap modelMap) {
+
+    try {
+      authorService.modifyAuthor(id,name);
+
+      return "redirect:../list";
+
+    } catch (MyExceptions e) {
+      modelMap.put("error", e.getMessage());
+    }
+
+    return "authorModify.html";
+
   }
 }

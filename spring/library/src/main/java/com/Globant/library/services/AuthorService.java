@@ -55,6 +55,13 @@ public class AuthorService {
     }
   }
 
+  public Author getOne(String id) {
+
+    Author author = authorRepository.getOne(id);
+    author.getName();
+    return author;
+  }
+
   private void validator( String name) throws MyExceptions{
 
     if (name == null || name.isEmpty()) {

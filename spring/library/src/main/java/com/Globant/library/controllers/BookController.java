@@ -1,6 +1,7 @@
 package com.Globant.library.controllers;
 
 import com.Globant.library.entities.Author;
+import com.Globant.library.entities.Book;
 import com.Globant.library.entities.Publisher;
 import com.Globant.library.exceptions.MyExceptions;
 import com.Globant.library.services.AuthorService;
@@ -66,5 +67,14 @@ public class BookController {
     }
 
     return "index.html";
+  }
+
+  @GetMapping("/list")
+  public String list(ModelMap modelMap) {
+    List<Book> books = bookService.searchAllBook();
+
+    modelMap.addAttribute("books", books);
+
+    return "bookList.html";
   }
 }
