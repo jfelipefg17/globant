@@ -21,46 +21,61 @@
     <div class="container">
       <form action="/book/registration" method="post">
 
+        <!--handle errors-->
+
+        <div th:if="${Error != null}" class="card text-white bg-danger mb-3 messageError">
+          <div class="card-body">
+            <h5 class="card-tittle">! ERROR !</h5>
+            <p class="card-text" th:text="${Error}" ></p>
+          </div>
+
+        </div>
+
+        <div th:if="${Good != null}" class="card text-white bg-success mb-3 mt-3 messageGood">
+          <div class="card-body">
+            <h5 class="card-tittle">! GOOD !</h5>
+            <p class="card-text" th:text="${Good}"></p>
+          </div>
+
+        </div>
+
+
         <div>
           <input type="number" class="form-group" name= "isbn" placeholder="ISBN:">
         </div>
+
         <div>
           <input type="text" class="form-group" name= "tittle" placeholder="Tittle:">
         </div>
+
         <div>
           <input type="number" class="form-group" name= "numberBook" placeholder="Number of books:">
         </div>
+
         <div>
-          <input type="text" class="form-group" name= "idAuthor" placeholder="Id Author:">
+          <select name="idAuthor">
+            <option>Select Author</option>
+
+            <option th:each="author : ${authors}"
+                    th:value="${author.id}"
+                    th:text="${author.name}"/>
+          </select>
         </div>
+
         <div>
-          <input type="text" class="form-group" name= "idPublisher" placeholder="Id Publisher:">
+          <select name="idPublisher">
+            <option>Select Publisher</option>
+
+            <option th:each="publisher : ${publishers}"
+                    th:value="${publisher.id}"
+                    th:text="${publisher.name}"/>
+          </select>
         </div>
 
         <button type="submit" class="btn btn-primary">Send</button>
 
       </form>
     </div>
-
-
-    <!--handle errors-->
-
-    <div th:if="${Error != null}" class="card text-white bg-danger mb-3 messageError">
-      <div class="card-body">
-        <h5 class="card-tittle">! ERROR !</h5>
-        <p class="card-text" th:text="${Error}" ></p>
-      </div>
-
-    </div>
-
-    <div th:if="${Good != null}" class="card text-white bg-success mb-3 mt-3 messageGood">
-      <div class="card-body">
-        <h5 class="card-tittle">! ERROR !</h5>
-        <p class="card-text" th:text="${Good}"></p>
-      </div>
-
-    </div>
-
 
 
 
