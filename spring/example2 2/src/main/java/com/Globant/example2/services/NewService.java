@@ -1,6 +1,7 @@
 package com.Globant.example2.services;
 
 import com.Globant.example2.entities.New;
+import com.Globant.example2.exceptions.MyException;
 import com.Globant.example2.repositories.NewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +18,13 @@ public class NewService {
 
 
   @Transactional
-  public void createNew(String tittle, String body) {
+  public void createNew(String tittle, String body) throws MyException {
+
+    validator(tittle,body);
+
+    New news = new New(tittle,body);
+
+    newRepository.save(news);
 
   }
 
@@ -31,7 +38,7 @@ public class NewService {
     return newRepository.getById(tittle);
   }
 
-  public void updateNew (String tittle, String body) {
+  public void updateNew (String tittle, String body) throws MyException {
 
   }
 
@@ -40,6 +47,16 @@ public class NewService {
     newRepository.deleteById(tittle);
   }
 
+  private void validator( String tittle, String body) throws MyException {
+
+    if (tittle == null || tittle.isEmpty()) {
+      throw new MyException("the name cant be null or empty");
+    }
+
+    if (body == null || body.isEmpty()) {
+      throw new MyException("the name cant be null or empty");
+    }
+  }
 
 
 
