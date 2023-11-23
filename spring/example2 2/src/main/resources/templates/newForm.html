@@ -13,26 +13,7 @@
           margin: 0;
           padding: 0;
       }
-
-      nav {
-          background-color: #333;
-          overflow: hidden;
-      }
-
-      nav a {
-          float: left;
-          display: block;
-          color: white;
-          text-align: center;
-          padding: 14px 16px;
-          text-decoration: none;
-      }
-
-      nav a:hover {
-          background-color: #ddd;
-          color: black;
-      }
-  </style>
+      </style>
 </head>
 <body>
 
@@ -43,32 +24,36 @@
   </div>
 </header>
 
-<!--<div class="container">-->
-<!--  <form action="/author/registration" method="post">-->
-<!--    <div>-->
-<!--      <input type="text" class="form-group" name= "name" placeholder="Name of author:">-->
-<!--    </div>-->
+<div class="container">
+  <form action="/new/addNew" method="post">
+    <div>
+      <input type="text" class="form-group" name= "tittle" placeholder="New tittle:">
+    </div>
+    <div>
+      <input type="text" class="form-group" name= "body" placeholder="New body:">
+    </div>
 
-<!--    <button type="submit" class="btn btn-primary">Send</button>-->
-<!--  </form>-->
-<!--</div>-->
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+</div>
 
-<!--&lt;!&ndash;handle errors&ndash;&gt;-->
+<!--handle errors-->
 
-<!--<div th:if="${Error != null}" class="card text-white bg-danger mb-3 messageError">-->
-<!--  <div class="card-body">-->
-<!--    <h5 class="card-tittle">! ERROR !</h5>-->
-<!--    <p class="card-text" th:text="${Error}" ></p>-->
-<!--  </div>-->
+<div th:if="${Error != null}" class="card text-white bg-danger mb-3 messageError">
+  <div class="card-body">
+    <h5 class="card-tittle">! ERROR !</h5>
+    <p class="card-text" th:text="${Error}" ></p>
+  </div>
 
-<!--</div>-->
+</div>
 
-<!--<div th:if="${Good != null}" class="card text-white bg-success mb-3 mt-3 messageGood">-->
-<!--  <div class="card-body">-->
-<!--    <h5 class="card-tittle">! GOOD !</h5>-->
-<!--    <p class="card-text" th:text="${Good}"></p>-->
-<!--  </div>-->
-<!--</div>-->
+<div th:if="${Good != null}" class="card text-white bg-success mb-3 mt-3 messageGood">
+  <div class="card-body">
+    <h5 class="card-tittle">! GOOD !</h5>
+    <p class="card-text" th:text="${Good}"></p>
+  </div>
+</div>
+
 
 <main>
 

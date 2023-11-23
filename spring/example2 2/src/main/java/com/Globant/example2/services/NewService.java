@@ -47,6 +47,12 @@ public class NewService {
     newRepository.deleteById(tittle);
   }
 
+  public New getOne(String tittle) {
+    New news = newRepository.getOne(tittle);
+    news.getBody();
+    return news;
+  }
+
   private void validator( String tittle, String body) throws MyException {
 
     if (tittle == null || tittle.isEmpty()) {

@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,39 +26,48 @@ public class NewController {
   }
 
   @PostMapping("/addNew")
-  public String addNew(@RequestParam String tittle, @RequestParam String body) throws MyException {
+  public String addNew(@RequestParam String tittle, @RequestParam String body, ModelMap modelMap) throws MyException {
 
     try {
 
       newService.createNew(tittle,body);
+      modelMap.put("Good", "The Author was successfully uploaded");
     }catch (MyException e){
 
       System.out.println(e.getMessage());
+      modelMap.put("error", e.getMessage());
       return "newForm.html";
     }
 
     return "index.html";
   }
 
-  @GetMapping("/modify")
+
+
+
+  @GetMapping("/modify/{tittle}")
   @Transactional
-  public String modifyNew(ModelMap modelMap) {
+  public String modifyNew(@PathVariable String tittle, ModelMap modelMap) {
+    modelMap.put("new", newService.getOne(tittle));
 
     return "newModify.html";
   }
 
-  @PostMapping("/addModifyNew")
-  public String addModifyNew(@RequestParam String tittle, @RequestParam String body) throws MyException {
+  @PostMapping("/modify{tittle}")
+  @Transactional
+  public String addModifyNew(@RequestParam String tittle, @RequestParam String body, ModelMap modelMap) throws MyException {
 
     try {
       newService.updateNew(tittle,body);
+
+      return "redirect../newList";
     }catch (MyException e){
 
       System.out.println(e.getMessage());
+      modelMap.put("error", e.getMessage());
       return "newModify.html";
     }
 
-    return "index.html";
   }
 
   @GetMapping("/delete")
