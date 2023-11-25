@@ -50,7 +50,6 @@ public class AuthorController {
 
     return "authorList.html";
   }
-
   @GetMapping("/modify/{id}")
   @Transactional
   public String modify(@PathVariable String id, ModelMap modelMap) {
@@ -59,6 +58,7 @@ public class AuthorController {
     return "authorModify.html";
   }
 
+
   @PostMapping("/modify/{id}")
   @Transactional
   public String modify(@PathVariable String id, String name, ModelMap modelMap) {
@@ -66,7 +66,7 @@ public class AuthorController {
     try {
       authorService.modifyAuthor(id,name);
 
-      return "redirect:../list";
+      return "redirect:/author/list";
 
     } catch (MyExceptions e) {
       modelMap.put("error", e.getMessage());

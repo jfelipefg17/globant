@@ -36,21 +36,28 @@
 </head>
 <body>
 
-<nav>
-  <a href="/author/list">AUTHORS </a>
-
-</nav>
 
 <header>
   <div class="container">
-    <h1>Delete New</h1>
+    <h1></h1>
   </div>
 </header>
 
+
 <div class="container">
 
+  <form class="form" th:action="@{/news/modify/__${tittle}__}" method="post">
 
+    <input hidden th:value="${tittle}" name="tittle">
+
+    <div>
+      <input th:value="${news.body}" type="text" class="form-control" name= "body">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Modify</button>
+  </form>
 </div>
+
 
 
 <main>

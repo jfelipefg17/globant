@@ -28,15 +28,15 @@
     </tr>
     </thead>
 
-    <tbody th:each="new : ${news}">
+    <tbody th:each="news : ${newss}">
     <tr>
-      <th scope="row" th:text="${new.tittle}"></th>
-      <td th:text="${new.body}"></td>
+      <td th:text="${news.tittle}"></td>
+      <td th:text="${news.body}"></td>
       <td>
-        <a th:href="@{/new/modify/__${new.tittle}__}"><i class="fas fa-edit"></i> Modify </a>
+        <a th:href="@{/news/modify/__${news.tittle}__}"><i class="fas fa-edit"></i> Modify </a>
       </td>
     </tr>
-    </tbody>
+
 
   </table>
 

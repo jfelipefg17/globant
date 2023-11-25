@@ -1,22 +1,20 @@
 package com.Globant.example2.entities;
 
-import org.thymeleaf.spring5.util.SpringRequestUtils;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class New {
+public class News {
 
   @Id
   private String tittle;
   private String body;
 
-  public New() {
+  public News() {
 
   }
 
-  public New(String tittle, String body) {
+  public News(String tittle, String body) {
     this.tittle = tittle;
     this.body = body;
   }
