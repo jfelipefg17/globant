@@ -47,20 +47,18 @@ public class newServiceTest {
   @Test
   void createNewANDfindById() throws MyException {
 
-    News news;
-
 //    System.out.println("newsService: " + newsService);
 
     when(newsRepository.save(any(News.class)))
             .thenAnswer(invocation -> {
-              news = invocation.getArgument(0);
+              News news = invocation.getArgument(0);
               return news;
             });
 
     newsService.createNews("Felipeee","felipe se murio");
 
 
-    news = newsService.searchNewsByTittle("Felipeee");
+    News news = newsService.searchNewsByTittle("Felipeee");
 
     //System.out.println(news.getTittle() + " AAAAAAA " + news.getBody());
 
