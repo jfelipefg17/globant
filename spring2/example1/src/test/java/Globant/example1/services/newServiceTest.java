@@ -1,20 +1,16 @@
-package com.Globant.example2.services;
+package Globant.example1.services;
 
-import com.Globant.example2.NewsApplication;
-import com.Globant.example2.entities.News;
-import com.Globant.example2.exceptions.MyException;
-import com.Globant.example2.repositories.NewsRepository;
+
+
+import Globant.example1.entities.News;
+import Globant.example1.exceptions.MyException;
+import Globant.example1.repositories.NewsRepository;
 import org.junit.jupiter.api.Test;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
