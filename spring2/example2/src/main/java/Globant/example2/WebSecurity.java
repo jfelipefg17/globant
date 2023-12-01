@@ -23,13 +23,13 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     auth.userDetailsService(userService).passwordEncoder(new BCryptPasswordEncoder());
   }
 
-  @Override
-  protected void configure(HttpSecurity http) throws Exception {
-    http
-            .authorizeRequests()
-            .antMatchers("/admin").hasRole("ROLE_ADMIN")
-            .antMatchers("/index").hasAnyRole()
-            .and()
-            .formLogin();
-  }
+//  @Override
+//  protected void configure(HttpSecurity http) throws Exception {
+//    http
+//            .authorizeRequests()
+//            .antMatchers("/admin").hasRole("ROLE_ADMIN")
+//            .antMatchers("/index").hasAnyRole()
+//            .and()
+//            .formLogin();
+//  }
 }

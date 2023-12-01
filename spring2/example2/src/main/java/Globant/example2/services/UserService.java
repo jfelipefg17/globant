@@ -28,22 +28,22 @@ public class UserService implements UserDetailsService {
 
   @Override
   public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-    User user = userRepository.findUserByEmail(email);
-
-    if (user != null ) {
-      List<GrantedAuthority> permissions = new ArrayList<>();
-
-      GrantedAuthority p = new SimpleGrantedAuthority("ROLE_" + user.getRole().toString());
-      permissions.add(p);
-
-      ServletRequestAttributes attributes =  (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
-
-      HttpSession session = attributes.getRequest().getSession(true);
-
-      session.setAttribute("user", user);
-
-      return new User(user.getEmail(), user.getPassword(), permissions);
-    }
+//    User user = userRepository.findUserByEmail(email);
+//
+//    if (user != null ) {
+//      List<GrantedAuthority> permissions = new ArrayList<>();
+//
+//      GrantedAuthority p = new SimpleGrantedAuthority("ROLE_" + user.getRole().toString());
+//      permissions.add(p);
+//
+//      ServletRequestAttributes attributes =  (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+//
+//      HttpSession session = attributes.getRequest().getSession(true);
+//
+//      session.setAttribute("user", user);
+//
+//      return new User(user.getEmail(), user.getPassword(), permissions);//TODO make constructor for this or what ?
+//    }
 
     return null;
 
