@@ -65,7 +65,7 @@ public class UserService implements UserDetailsService {
       List<GrantedAuthority>  permissions = new ArrayList<>();
       GrantedAuthority p = new SimpleGrantedAuthority("ROLE_" + userEntity.getRole().toString());
       permissions.add(p);
-      
+
  // i have to called like this because the class user of user details is called like user that is my entity and the software got confuse with that
       return new org.springframework.security.core.userdetails.User(userEntity.getEmail(), userEntity.getPassword(),permissions);
 
