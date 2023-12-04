@@ -33,7 +33,7 @@ public class AuthorController {
 
     }catch (MyExceptions e) {
       System.out.println(e.getMessage());
-      model.put("error", e.getMessage());
+      model.put("Error", e.getMessage());
       return "authorForm.html";
     }
 

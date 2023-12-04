@@ -10,6 +10,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,7 +32,7 @@ public class UserService implements UserDetailsService {
 
     user.setName(name);
     user.setEmail(email);
-    user.setPassword(password1);
+    user.setPassword(new BCryptPasswordEncoder().encode(password1));
     user.setRole(Role.USER);
 
     userRepository.save(user);
@@ -51,7 +52,7 @@ public class UserService implements UserDetailsService {
     if (password2.isEmpty() || password2 == null || password2.length() <=5) {
       throw new MyExceptions("the second password can not be null or empty and has to have more than 5 digits");
     }
-    if( password1.equals(password2)) {
+    if( !password1.equals(password2)) {
       throw new MyExceptions("the passwords are not equal ");
     }
   }

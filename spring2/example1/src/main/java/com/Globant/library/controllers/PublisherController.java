@@ -31,6 +31,7 @@ public class PublisherController {
     }catch (MyExceptions e){
       System.out.println(e.getMessage());
       model.put("Error", e.getMessage());
+
       return "publisherForm.html";
     }
 
