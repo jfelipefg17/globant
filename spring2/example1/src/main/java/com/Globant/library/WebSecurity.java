@@ -26,7 +26,23 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
   // to disable the password and user
   @Override
   protected void configure(HttpSecurity httpSecurity) throws Exception {
-    httpSecurity.authorizeRequests().antMatchers("/css", "/js", "/img", "/***").permitAll();
+    httpSecurity
+            .authorizeRequests()
+                    .antMatchers("/css", "/js", "/img", "/***")
+                    .permitAll()
+            .and().formLogin()
+                    .loginPage("/login")
+                    .loginProcessingUrl("/loginCheck")
+                    .usernameParameter("email")
+                    .passwordParameter("password")
+            .defaultSuccessUrl("/start")
+            .permitAll()
+            .and().logout()
+            .logoutUrl("/logOut")
+            .logoutSuccessUrl("/")
+            .permitAll();
+
+
 
 
 
