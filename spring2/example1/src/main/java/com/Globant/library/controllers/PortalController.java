@@ -51,8 +51,16 @@ public class PortalController {
   }
 
   @GetMapping("/login")
-  public String login(){
+  public String login(@RequestParam(required = false) String error, ModelMap modelMap){
+    if (error != null) {
+      modelMap.put("Error","Email Or Password could be wrong");
+    }
     return "login.html";
+  }
+
+  @GetMapping("/start")
+  public String start() {
+    return "index.html";
   }
 
 
