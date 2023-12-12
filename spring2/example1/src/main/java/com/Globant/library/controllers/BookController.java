@@ -66,7 +66,7 @@ public class BookController {
       return "bookForm.html";
     }
 
-    return "index.html";
+    return "index1.html";
   }
 
   @GetMapping("/list")

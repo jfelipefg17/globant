@@ -1,8 +1,10 @@
 package com.Globant.library.controllers;
 
+import com.Globant.library.entities.User;
 import com.Globant.library.exceptions.MyExceptions;
 import com.Globant.library.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/")
@@ -20,7 +24,7 @@ public class PortalController {
 
   @GetMapping("/")
   public String index() {
-    return "index.html";
+    return "login.html";
   }
 
 
@@ -36,7 +40,7 @@ public class PortalController {
      userService.register(name, email, password1, password2);
      modelMap.put("Good","User Successfully Registered");
 
-     return "index.html";
+     return "index1.html";
 
    } catch (MyExceptions e) {
 
@@ -58,10 +62,24 @@ public class PortalController {
     return "login.html";
   }
 
+  @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
   @GetMapping("/start")
-  public String start() {
-    return "index.html";
+  public String start(HttpSession session) {
+
+    User logUser = (User) session.getAttribute("userSession");
+
+    if (logUser.getRole().toString().equals("ADMIN")) {
+      return "redirect:/admin/dashboard";
+    } else {
+      return "index1.html";
+    }
   }
+
+//  @PreAuthorize("hasRole('ROLE_USER')")
+//  @GetMapping("/start")
+//  public String start() {
+//    return "index1.html";
+//  }
 
 
 }

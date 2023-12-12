@@ -38,7 +38,7 @@ public class AuthorController {
     }
 
 
-    return "index.html";
+    return "index1.html";
   }
 
   @GetMapping("/list")

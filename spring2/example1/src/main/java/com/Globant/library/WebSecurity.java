@@ -28,19 +28,22 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity httpSecurity) throws Exception {
     httpSecurity
             .authorizeRequests()
-                    .antMatchers("/css", "/js", "/img", "/***")
-                    .permitAll()
+            .antMatchers("/admin/*").hasRole("ADMIN")
+            .antMatchers("/css", "/js", "/img", "/***")
+            .permitAll()
             .and().formLogin()
-                    .loginPage("/login")
-                    .loginProcessingUrl("/loginCheck")
-                    .usernameParameter("email")
-                    .passwordParameter("password")
-                    .defaultSuccessUrl("/start")
-                    .permitAll()
+            .loginPage("/login")
+            .loginProcessingUrl("/loginCheck")
+            .usernameParameter("email")
+            .passwordParameter("password")
+            .defaultSuccessUrl("/start")
+            .permitAll()
             .and().logout()
-                    .logoutUrl("/logOut")
-                    .logoutSuccessUrl("/")
-                    .permitAll();
+            .logoutUrl("/logOut")
+            .logoutSuccessUrl("/login")
+            .permitAll()
+            .and().csrf()
+            .disable();
 
 
 

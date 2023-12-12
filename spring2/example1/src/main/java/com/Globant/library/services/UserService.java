@@ -13,7 +13,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,7 +71,13 @@ public class UserService implements UserDetailsService {
       GrantedAuthority p = new SimpleGrantedAuthority("ROLE_" + userEntity.getRole().toString());
       permissions.add(p);
 
- // i have to called like this because the class user of user details is called like user that is my entity and the software got confuse with that
+      ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+
+      HttpSession session = attributes.getRequest().getSession(true);
+
+      session.setAttribute("userSession", userEntity);
+
+      // i have to called like this because the class user of user details is called like user that is my entity and the software got confuse with that
       return new org.springframework.security.core.userdetails.User(userEntity.getEmail(), userEntity.getPassword(),permissions);
 
     } else {
