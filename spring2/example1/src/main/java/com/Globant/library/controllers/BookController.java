@@ -8,6 +8,7 @@ import com.Globant.library.services.AuthorService;
 import com.Globant.library.services.BookService;
 import com.Globant.library.services.PublisherService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -68,7 +69,7 @@ public class BookController {
 
     return "index1.html";
   }
-
+  @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
   @GetMapping("/list")
   public String list(ModelMap modelMap) {
     List<Book> books = bookService.searchAllBook();

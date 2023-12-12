@@ -4,6 +4,7 @@ import com.Globant.library.entities.Author;
 import com.Globant.library.exceptions.MyExceptions;
 import com.Globant.library.services.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
@@ -41,6 +42,7 @@ public class AuthorController {
     return "index1.html";
   }
 
+  @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
   @GetMapping("/list")
   @Transactional
   public String list(ModelMap modelMap) {
@@ -57,6 +59,7 @@ public class AuthorController {
 
     return "authorModify.html";
   }
+
 
 
   @PostMapping("/modify/{id}")

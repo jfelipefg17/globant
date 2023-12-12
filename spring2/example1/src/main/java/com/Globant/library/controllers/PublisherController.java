@@ -5,6 +5,7 @@ import com.Globant.library.entities.Publisher;
 import com.Globant.library.exceptions.MyExceptions;
 import com.Globant.library.services.PublisherService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -44,6 +45,7 @@ public class PublisherController {
     return "index1.html";
   }
 
+  @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
   @GetMapping("/list")
   @Transactional
   public String list(ModelMap modelMap) {
