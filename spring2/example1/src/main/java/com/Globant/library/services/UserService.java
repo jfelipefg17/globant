@@ -1,10 +1,12 @@
 package com.Globant.library.services;
 
+import com.Globant.library.entities.Image;
 import com.Globant.library.entities.User;
 import com.Globant.library.enums.Role;
 import com.Globant.library.exceptions.MyExceptions;
 import com.Globant.library.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.expression.spel.ast.NullLiteral;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,10 +18,12 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService implements UserDetailsService {
@@ -27,8 +31,11 @@ public class UserService implements UserDetailsService {
   @Autowired
   private UserRepository userRepository;
 
+  @Autowired
+  private ImageService imageService;
+
   @Transactional
-  public void register(String name, String email, String password1, String password2) throws MyExceptions {
+  public void register(MultipartFile multipartFile, String name, String email, String password1, String password2) throws MyExceptions {
 
     validator(name, email, password1, password2);
 
@@ -39,8 +46,51 @@ public class UserService implements UserDetailsService {
     user.setPassword(new BCryptPasswordEncoder().encode(password1));
     user.setRole(Role.USER);
 
+    Image image = imageService.safe(multipartFile);
+
+    user.setImage(image);
+
     userRepository.save(user);
   }
+
+  @Transactional
+  public void update(MultipartFile multipartFile, String id, String name, String email, String password1, String password2) throws MyExceptions {
+
+    validator(name, email, password1, password2);
+
+    Optional<User> aws = userRepository.findById(id);
+
+    if (aws.isPresent()) {
+
+      User user = aws.get();
+
+      user.setName(name);
+      user.setEmail(email);
+      user.setPassword(new BCryptPasswordEncoder().encode(password1));
+      user.setRole(Role.USER);
+
+      String idImage = null;
+
+      if (user.getImage() != null) {
+        idImage = user.getImage().getId();
+      }
+
+      Image image = imageService.update(multipartFile, idImage);
+
+      user.setImage(image);
+
+
+      userRepository.save(user);
+
+    }
+
+
+  }
+
+  public User getOne(String id){
+    return userRepository.getOne(id);
+  }
+
 
   private void validator(String name, String email, String password1, String password2) throws MyExceptions {
 

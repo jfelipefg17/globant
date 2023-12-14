@@ -8,10 +8,8 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 
@@ -34,10 +32,10 @@ public class PortalController {
   }
 
   @PostMapping("/register")
-  public String register(@RequestParam String name, @RequestParam String email, @RequestParam String password1, @RequestParam String password2, ModelMap modelMap) throws MyExceptions{
+  public String register(@RequestParam String name, @RequestParam String email, @RequestParam String password1, @RequestParam String password2, ModelMap modelMap, MultipartFile multipartFile) throws MyExceptions{
 
     try {
-     userService.register(name, email, password1, password2);
+     userService.register(multipartFile, name, email, password1, password2);
      modelMap.put("Good","User Successfully Registered");
 
      return "index1.html";
@@ -74,6 +72,37 @@ public class PortalController {
       return "index1.html";
     }
   }
+
+  @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
+  @GetMapping("/profile")
+  public String profile(ModelMap modelMap, HttpSession httpSession) {
+
+    User user = (User) httpSession.getAttribute("userSession");
+    modelMap.put("user", user);
+    return "userModify.html";
+  }
+
+
+  @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
+  @PostMapping("/profile/{id}")
+  public String update(MultipartFile multipartFile, @PathVariable String id, @RequestParam String name,@RequestParam String email, @RequestParam String password1, @RequestParam String password2, ModelMap modelMap) {
+
+
+    try {
+      userService.update(multipartFile,id,name,email,password1,password2);
+
+      modelMap.put("Good", "User Update");
+
+      return "index1.html";
+
+    }catch (MyExceptions exceptions) {
+
+      modelMap.put("Error", exceptions.getMessage());
+
+      return "userModify.html";
+    }
+  }
+
 
 //  @PreAuthorize("hasRole('ROLE_USER')")
 //  @GetMapping("/start")

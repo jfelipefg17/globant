@@ -16,7 +16,7 @@
 </header>
 
 <div class="container">
-  <form th:action="@{/register}" method="post">
+  <form th:action="@{/register}" method="post"  enctype="multipart/form-data">
 
     <div>
       <h3>Sing Up</h3>
@@ -27,6 +27,11 @@
     <div>
       <input type="email" class="form-group" name= "email" placeholder="Email" th:value="${email}">
     </div>
+
+    <div>
+      <input type="file" class="form-group" name= "multipartFile">
+    </div>
+
     <div>
       <input type="password" class="form-group" name= "password1" placeholder="PASSWORD" th:value="${password1}">
     </div>

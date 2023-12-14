@@ -24,6 +24,9 @@ public class User {
   @Enumerated(EnumType.STRING)
   private Role role;
 
+  @OneToOne
+  private Image image;
+
 
 
 
@@ -31,12 +34,21 @@ public class User {
 
   }
 
-  public User(String id, String name, String email, String password, Role role) {
+  public User(String id, String name, String email, String password, Role role, Image image) {
     this.id = id;
     this.name = name;
     this.email = email;
     this.password = password;
     this.role = role;
+    this.image = image;
+  }
+
+  public Image getImage() {
+    return image;
+  }
+
+  public void setImage(Image image) {
+    this.image = image;
   }
 
   public String getId() {

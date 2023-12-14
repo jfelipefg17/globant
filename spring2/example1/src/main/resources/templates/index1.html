@@ -12,6 +12,7 @@
   <a href="/author/list">Authors</a>
   <a href="/publisher/list">Publishers</a>
   <a href="/logOut">LogOut</a>
+  <a href="/profile">Profile</a>
 
 </nav>
 
@@ -27,6 +28,12 @@
 
   <div class="container contenedorLibros">
     <p class="tituloLibros" th:if="${session.userSession != null}" th:text=" 'Hi ' + ${session.userSession.name}  "></p>
+  </div>
+
+  <div class="container">
+    <a th:if="${session.userSession.image != null}" class="d-flex align-items-center">
+      <img class="logo"  th:src="@{/image/profile/__${session.userSession.id}__}" >
+    </a>
   </div>
 
 
