@@ -2,13 +2,13 @@ package entities;
 
 public class Dog {
     private String name;
-    private Integer age;
+    private int age;
 
     public Dog () {
 
     }
 
-    public Dog(String name, Integer age) {
+    public Dog(String name, int age) {
         this.name = name;
         this.age = age;
     }
@@ -21,11 +21,11 @@ public class Dog {
         this.name = name;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

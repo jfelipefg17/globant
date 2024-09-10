@@ -9,7 +9,7 @@ public class ServiceDog {
     public static Comparator<Dog> compAge = new Comparator<Dog>() {
         @Override
         public int compare(Dog d1, Dog d2) {
-            return d2.getAge().compareTo(d1.getAge());
+            return d2.getAge();
         }
 
     };
